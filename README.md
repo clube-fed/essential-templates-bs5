@@ -1,6 +1,8 @@
 # essential-templates-bs5
 Master repository for the new 2026 Essential Templates w/ Bootstrap 5. See [repository wiki](https://github.com/clube-fed/essential-templates-bs5/wiki) for examples and details on specific components.
 
+* Note: Beginning with this package, bootstrap is now compiled via SASS with the site stylesheet (style.css).
+
 ## Admin console setup
 ### Display Theme
 Create a display theme and select it from the Display Theme dropdown in admin console like normal. This will essentially only be used for displaying heading styles accurately within the Editor, since we don't have the ability to insert anything different into its head tag. This is the purpose of the `ClientSpecificTheme.scss` file in the downloaded package. Change the file's name to be site specific and upload it to the css folder on the CE Farm as normal. 
