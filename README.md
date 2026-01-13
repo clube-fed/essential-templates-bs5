@@ -1,7 +1,7 @@
 # essential-templates-bs5
 Master repository for the new 2026 Essential Templates w/ Bootstrap 5. See [repository wiki](https://github.com/clube-fed/essential-templates-bs5/wiki) for examples and details on specific components.
 
-* Note: Beginning with this package, bootstrap is now compiled via SASS with the site stylesheet (style.css).
+* Note: Beginning with this package, bootstrap is now compiled via SASS with the site stylesheet (style.css). It is no longer using a single source bootstrap stylesheet.
 
 ## Admin console setup
 ### Display Theme
