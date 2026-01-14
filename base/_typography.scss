@@ -1,0 +1,89 @@
+h1, .h1, %h1 {
+    @include font-size($h1-size);
+    font-family: var(--font-serif);
+    color: var(--color-secondary);
+    font-weight: 300;
+    line-height: 1.333;
+    margin-bottom: 0.4em;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+h2, .h2, %h2 {
+    @include font-size($h2-size);
+    font-family: var(--font-serif);
+    color: var(--color-secondary);    
+    font-weight: 300;
+    line-height: 1.22;
+    margin-bottom: 0.8em;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+h3, .h3, %h3 {
+    @include font-size($h3-size);
+    font-family: var(--font-serif);
+    color: var(--color-secondary);    
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: 0.6em;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+h4, .h4, %h4 {
+    @include font-size($h4-size);
+    font-family: var(--font-serif);
+    color: var(--color-secondary);
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: 0.6em;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+h5, .h5, %h5 {
+    @include font-size($h5-size);
+    font-family: var(--font-serif);
+    color: var(--color-secondary);
+    font-weight: 300;
+    line-height: 1.33;
+    margin-bottom: 0.6em;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+h6, .h6, %h6 {
+    @include font-size($h6-size);
+    font-family: var(--font-sans-serif);
+    color: var(--color-secondary);
+    font-weight: 700;
+    line-height: 1.31;
+    margin-bottom: 2em;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    color: $base-font-color;
+    letter-spacing: $base-font-letter-spacing;
+    line-height: $base-line-height;
+    font-weight: $base-font-weight;
+    .mpContent &, .style-guide & {
+        margin: 0 0 #{$base-line-height}em;
+    }
+    .mpContent h1 + & {
+        margin-top: 2rem;
+    }
+}
+
+.mpContent {
+    h1,h2,h3,h4,h5,h6,p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

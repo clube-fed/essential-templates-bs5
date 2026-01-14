@@ -1,0 +1,125 @@
+// VARIABLES
+$card-img-width-value: 900; // omit unit from value
+$card-img-width-percent-value: calc($card-img-width-value / 1600) * 100%;
+$card-img-height-value: 600; // omit unit from value
+$card-text-mpContent-max-width: 500px;
+$cards-stack-min-breakpoint: map-get($grid-breakpoints, lg);
+$cards-stack-max-breakpoint: ($cards-stack-min-breakpoint - 1);
+
+// CARD PANEL v3 
+.card-panels.opt3 {
+    margin: 0 auto;
+    // padding: 0 15px;
+    .card {
+        margin: 0 auto 2px;
+        border: none;
+        // max-width: 1300px;
+        @media (max-width:$cards-stack-max-breakpoint) {
+            max-width: #{$card-img-width-value}px;            
+        }        
+        .clickToEditDiv {
+            font-size: 0;
+            &:after {                
+                vertical-align: middle;
+            }
+        }        
+        .row {
+            flex-wrap: nowrap;
+            --bs-gutter-x: 0;
+            @media (max-width:$cards-stack-max-breakpoint) {
+                flex-wrap: wrap;
+            }
+        }
+        .card-img {
+            display: flex;
+            flex-direction: column;            
+            max-width: #{$card-img-width-value}px;
+            @media (min-width:$cards-stack-min-breakpoint) {
+                flex: 0 0 auto;
+                width: $card-img-width-percent-value;
+            }
+            .mpContent {
+                height: 100%;
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+                &:not(:has(img)) {
+                    height: auto;
+                    + .clickToEditDiv {
+                        margin: auto !important;
+                        &:after {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+            .clickToEditDiv {   
+                margin-top: -22px !important;     
+                &:after {
+                    content: '(image)';
+                }
+            }
+        }
+        .card-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.4rem;            
+            @media (min-width:$cards-stack-min-breakpoint) {
+                flex: 1;
+                width: calc(100% - $card-img-width-percent-value);
+            }
+            @media (max-width:$cards-stack-max-breakpoint) {
+                flex-basis: auto;
+                padding-bottom: 5rem;
+            }
+            @include media-breakpoint-down(sm) {
+                padding-inline: 1.2rem;
+            }
+            .mpContent {
+                margin-inline: auto;
+                @media (min-width:$cards-stack-min-breakpoint) {
+                    max-width: $card-text-mpContent-max-width;
+                }
+                h2 {
+                    // font-weight: 700;
+                    margin-bottom: 10px;
+                }
+                > a, p > a:last-child { 
+                    margin-top: 0;
+                    &:not([class*="abut"]) {
+                        color: var(--color-secondary);
+                        font-weight: 700;
+                        text-decoration: none;
+                        &:hover,&:focus {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                [class*="icon"] {
+                    margin-left: 8px;
+                }
+            }
+            .clickToEditDiv:after {
+                content: '(text)';
+            }
+        }
+        &:nth-child(even):not(.img-left),&.img-right {
+            .card-img {
+                @media (min-width:$cards-stack-min-breakpoint) {
+                    order: 1;
+                }                
+            }
+        }
+        &:nth-child(odd):not(.img-right),&.img-left {
+            .card-img {
+                @media (min-width:$cards-stack-min-breakpoint) {
+                    order: 0;
+                }                
+            }
+        }
+    }
+}

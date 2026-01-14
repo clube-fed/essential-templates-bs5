@@ -1,0 +1,227 @@
+%abut-base {
+    line-height: 1em;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    display: inline-block;
+    width: auto;
+    cursor: pointer;
+    transition: background .3s ease-in-out, color .3s ease-in-out, border .3s ease-in-out;
+    &:hover,&:focus,&:active {
+        text-decoration: none;
+    }
+}
+
+// button styles
+.abut {
+    @extend %abut-base;
+    font-family: $button-font;
+    font-size: $button-font-size;
+    font-weight: $button-weight;
+    text-transform: $button-text-transform;
+    letter-spacing: $button-letter-spacing;
+    color: $button-font-color;
+    background-color: $button-bg;
+    background-image: none;
+    border: $button-border;
+    border-radius: $button-border-radius;
+    padding: $button-padding;
+    &:hover, &:focus, &:active {
+        background-color: $button-bg-hover;
+        border-color: $button-border-hover-color;
+        color: $button-font-hover-color;
+    }    
+    form[action*="ArticleEdit"] & {
+        padding: .75rem 1.25rem;
+        border: inherit;
+    }
+}
+
+.abut-secondary {
+    @extend %abut-base;
+    font-family: $second-button-font;
+    font-size: $second-button-font-size;
+    font-weight: $second-button-weight;
+    text-transform: $second-button-text-transform;
+    letter-spacing: $second-button-letter-spacing;
+    color: $second-button-font-color;
+    background-color: $second-button-bg;
+    border: $second-button-border;
+    border-radius: $second-button-border-radius;
+    padding: $second-button-padding;
+    &:hover, &:focus, &:active {
+        background-color: $second-button-bg-hover;
+        border-color: $second-button-border-hover-color;
+        color: $second-button-font-hover-color;
+    }
+}
+
+.abut-tertiary {
+    @extend %abut-base;
+    font-family: $third-button-font;
+    font-size: $third-button-font-size;
+    font-weight: $third-button-weight;
+    text-transform: $third-button-text-transform;
+    letter-spacing: $third-button-letter-spacing;
+    color: $third-button-font-color;
+    background-color: $third-button-bg;
+    border: $third-button-border;
+    border-radius: $third-button-border-radius;
+    padding: $third-button-padding;
+    &:hover, &:focus, &:active {
+        background-color: $third-button-bg-hover;
+        border-color: $third-button-border-hover-color;
+        color: $third-button-font-hover-color;
+    }
+}
+
+.user-is-tabbing [class*="abut"]:focus-visible { 
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+// -------------------------
+// Header login links
+// -------------------------
+.sitewrap,.modulewrap {
+    header {
+        .log-link.abut, .log-link.abut-secondary {
+            min-width: 130px !important;
+            @media screen and (max-width:476px) {
+                width: 100% !important;
+                min-width: 0 !important;
+            }
+        }
+    }
+}
+
+// -------------------------
+// Module buttons
+// -------------------------
+.modulesWrap {
+    .abut {
+        margin: 2px;
+        padding: 18px 39px 17px 39px;
+        width: auto !important;
+        letter-spacing: .1em;
+    }
+    .qFilterButton input.abut {
+        padding: 11px 25px 10px !important;
+        margin: 0;
+    }
+}
+
+// -------------------------
+// Mobile styles
+// -------------------------
+@media screen and (max-width: 425px) {
+    .abut {
+        width: 100%;
+    }
+}
+
+.mobileButton {
+    background: $button-bg;
+    background-color: $button-bg;
+    color: $button-font-color;    
+    border-color: color-mix(in srgb, black 10%, $button-bg);
+    @media screen and (max-width:367px) {
+        padding: 5px;
+        &.searchButton {
+            padding: 0 5px;
+        }
+    }
+    &.searchButton { 
+        width: 50px;
+        background:transparent!important;
+    } 
+}
+
+// -------------------------
+// Table buttons
+// -------------------------
+.table-button td a {
+    @extend .abut;
+    margin: 15px;
+    text-decoration: none !important;
+}
+
+.table-button-secondary td a {
+    @extend .abut-secondary;
+    margin: 15px;
+    text-decoration: none !important;
+}
+
+.table-button-tertiary td a {
+    @extend .abut-tertiary;
+    margin: 15px;
+    text-decoration: none !important;
+}
+
+.table-button, .table-button-secondary, .table-button-tertiary {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    &.w-100 tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+    &.aligned-left {
+        margin-right: auto;
+        margin-left: 0;
+    }
+    &.aligned-right {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    &.uniform-widths td {
+        flex: 1;
+        a {
+            display: block;
+        }
+    }
+}
+
+// -------------------------
+// Legacy overrides / special cases
+// -------------------------
+
+/* Role Security Pop-up: ensure buttons appear clearly */
+#ctl01_btnReturnResults, #ctl01_btnSearch { 
+    font-size: 12px;
+    font-weight: 400;
+    padding: 5px;
+    background: 0;
+    color: inherit;
+    letter-spacing: 0;
+    text-transform: none;
+    border: 1px solid;
+    &:hover {
+        background: $button-bg;
+        color: $button-font-color;
+    }
+}
+
+/* Session expiring modal buttons */
+.bodytxt #form1 input#btnKeepAlive.abut, .bodytxt #form1 input#btnKeepAlive.abut + .abut {
+    font-weight: 400;
+    letter-spacing: 0;
+    padding: 5px;
+    width: auto !important;
+    text-transform: none;
+    border-radius: 0;
+}
+
+/* Mobile Buttons Update If not using Mobile Stylesheet */ 
+
+//.injectContent .searchButton { width: 40px; }
+//.injectContent .mobileButton { color: #000; }

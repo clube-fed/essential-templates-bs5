@@ -1,0 +1,139 @@
+:root {
+    --color-white: #{$white};
+    --color-black: #{$black};
+    --color-primary: #{$color-primary};
+    --color-secondary: #{$color-secondary};
+    --color-tertiary: #{$color-tertiary};
+    --color-quaternary: #{$color-quaternary};
+    --color-quinary: #{$color-quinary};
+    --color-senary: #{$color-senary};
+    --color-septenary: #{$color-septenary};
+    --color-octonary: #{$color-octonary};
+    --color-nonary: #{$color-nonary};
+    --color-denary: #{$color-denary};
+    --color-darkest: #{$color-darkest};
+    --color-lightest: #{$color-lightest};
+    --font-sans-serif: #{$base-font-sans-serif};
+    --font-sans-serif2: #{$base-font-sans-serif2};
+    --font-serif: #{$base-font-serif};
+    --font-serif2: #{$base-font-serif2};
+}
+
+html {
+    font-size: calc((#{$root-font-size-without-unit} / 16) * 1em);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: $base-font-size;
+    color: $base-font-color;
+    font-weight: $base-font-weight;
+    font-family: $base-font-family;
+    -moz-osx-font-smoothing: grayscale;
+    &.page {
+        background-color: $white;
+        background-repeat: repeat;
+        //line-height: $base-line-height;
+        @include font-smoothing;
+    }
+}
+
+.mpContent, .style-guide {
+    ol, ul {
+        line-height: $base-line-height;
+        body.isMobile & {
+            padding-inline-start: 40px;
+        }
+    }
+}
+
+.clickToEditDiv {
+    font-size: 0;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+    &[onclick*="LaunchMemPickerWin"] {
+        text-decoration: $link-hover-decoration !important;
+        &:hover,&:focus {
+            text-decoration: none !important;
+        }
+    }
+    &:hover,&:focus {
+        color: $link-hover-color;
+        text-decoration: underline;
+    }
+    &:not([class*="abut"]) {
+        .mpContent & {
+            text-decoration: $link-hover-decoration;
+            &:hover,&:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+a:focus, button:focus, input:focus {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: Highlight;
+    @media (-webkit-min-device-pixel-ratio:0) {
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+    }
+}
+
+body.dynamicpageedit {
+    table {
+        border-collapse: separate;
+    }    
+}
+
+.eventMgrPop {
+    #eventMgrWrapper {
+        //height: 100% !important;
+        min-height: 100% !important;
+    }
+    #floatingToolbar .floatRight li {
+        padding: 0;
+    }
+    p {
+        line-height: 1;
+        font-size: 12px;
+    }
+    h3 {
+        font-size: 16px;
+        letter-spacing: 0;
+        margin-bottom: 10px;
+    }
+}
+
+// BEGIN IE SPECIFIC
+html._Telerik_IE9, html._Telerik_IE9 body {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.nl-container {
+    p, ol, ul {
+        color: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+    }
+    *:not(strong):not([style*="font-weight"]) {
+        font-weight: inherit !important;
+    }
+    *:not([style*=" color:"]):not([style^="color:"]):not([style*=";color:"]) {
+        color: inherit !important;
+    }
+    *:not([style*="font-family"]) {
+        font-family: inherit !important;
+    }
+}
+
+table[id*="_dpEditor"] {
+    border-collapse: separate;
+}

@@ -1,0 +1,96 @@
+// VARIABLES
+$quick-link-font-default-color: var(--color-secondary);
+$quick-link-font-hover-color: $quick-link-font-default-color;
+$quick-link-font-text-transform: uppercase;
+$quick-link-font-letter-spacing: 0.2rem;
+$quick-link-font-weight: 700;
+$quick-link-font-size: 1.4rem;
+$quick-link-font-family: var(--font-sans-serif);
+$quick-link-icon-font-size: 2.4rem;
+$quick-link-icon-default-color: $quick-link-font-default-color;
+$quick-link-icon-hover-color: $quick-link-font-hover-color;
+
+// QUICK LINKS v2
+.quick-links.opt2 {
+    // min-height: 400px;
+    // background-size: cover;
+    // background-position: center center;
+    // background-color: $color-darkest;
+    text-align: center;
+    color: $white;
+    font-size: 0;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 3rem 1.5rem;
+    span[class*="icon"] {
+        position: relative;
+        color: $quick-link-icon-default-color;
+        font-size: $quick-link-icon-font-size;
+        width: 100%;
+        display: inline-block;
+        margin: 0;
+        text-decoration: none !important;
+        flex: 0 1 1.6em;
+        &:before {
+            padding: 0 0.6em 0 0;
+            text-decoration: none;
+            display: inline-block;
+        }                       
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2.8rem;
+        @include media-breakpoint-down(lg) {
+            margin-inline: auto;
+        }
+        li {
+            display: block;
+            padding: 0;
+            margin: 0;
+            font-size: 0;
+            flex: 0 0 100%;
+            vertical-align: top;
+            transition: all .3s ease-in-out;
+            a {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                font-size: $quick-link-font-size;
+                font-family: $quick-link-font-family;
+                font-weight: $quick-link-font-weight;
+                text-transform: $quick-link-font-text-transform;
+                text-align: left;
+                color: $quick-link-font-default-color;
+                line-height: 1.2;
+                letter-spacing: $quick-link-font-letter-spacing;
+                text-decoration: none;
+                padding: 0;
+                position: relative;
+                transition: all 0.3s ease-in-out;
+                &:hover,&:focus {
+                    color: $quick-link-font-hover-color;
+                    span[class*="icon"] {
+                        color: $quick-link-icon-hover-color;
+                    }
+                }
+                body.user-is-tabbing & {
+                    &:focus {
+                        text-decoration: none;
+                        //outline-style: dashed;
+                        outline-color: $white;
+                        outline-width: 2px;
+                        opacity: 1;
+                    }
+                }
+            }            
+        }                
+    }
+}

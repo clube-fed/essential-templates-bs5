@@ -1,0 +1,194 @@
+@mixin view-all-link {
+    display: inline-block;
+    margin: 0 0 3rem;
+    color: var(--color-tertiary);
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-decoration: none;
+    &:hover, &:focus {
+        // color: var(--color-tertiary);
+        text-decoration: underline;
+    }
+}
+
+// mobile navbar-collapse
+@mixin mobile-navbar-collapse {
+    .navbar-collapse {
+        background: $mobile-header-bg-color;
+        .navbar-nav {
+            .dropdown {
+                display: flex;
+                //flex-wrap: nowrap;
+                > a.nav-link {
+                    flex: 0 1 (calc(100% - 8rem));
+                    padding-right: 0;
+                }
+                &.open {
+                    background: $color-lightest;
+                    > .dropdown-menu {
+                        display: block;
+                        width: 100%;
+                        background: transparent;
+                    }
+                }
+            }
+            .dropdown-menu {
+                border: none;
+                padding-top: 0;
+                .nav-link {
+                    color: $nav-top-mobile-default-font-color;
+                }
+            }
+            // TOP NAV
+            > li {
+                border-bottom: 1px solid $border-color;
+                > a.nav-link {
+                    text-align: left;
+                    color: $nav-top-mobile-default-font-color;
+			        justify-content: flex-start;
+                    span[class*="nc-icon"] {
+                        font-size: 1.4rem;
+                        margin: 0 0.5rem 0.5rem 0;
+                    }
+                }
+                > a.dropdown-toggle {
+                    body:not(.user-is-tabbing) & {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                    .caret:before {
+                        color: $base-font-color;
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                    }
+                }
+		        &.open, &.selectedItem, &.selectedParent, &.selectedGrandParent {
+                    > a.nav-link {
+                        color: $nav-top-mobile-selected-font-color;
+                    }                        
+                }
+                &.open {
+                    .dropdown-toggle .caret:before,
+                    > a.nav-link {
+                        color: $nav-top-mobile-selected-font-color;
+                    }
+                }
+                &:last-child {
+                    display: flex;
+                }
+                li {
+                    .nav-link {
+                        color: $nav-top-mobile-default-font-color;
+                    }
+                    &.level2 .dropdown-menu {
+                        border-left: 1px solid $base-font-color;
+                        padding: 0;
+                        margin: 0.9rem 0 0.9rem 3rem;
+                        .nav-link {
+                            padding: 0.9rem 2rem;
+                            color: $nav-sub-mobile-3rd-lev-font-color;
+                        }
+                    }
+                }                  
+            }
+        }
+        > .navbar-nav, .right-menu .navbar-nav {
+            > li:last-child > a.nav-link {
+                color: $nav-top-mobile-selected-font-color;
+            }
+        }
+    }
+}
+
+// nav font styles
+@mixin nav-font-style($fontfamily, $color, $texttransform, $fontsize, $fontweight, $letterspacing, $textalign, $hoverdecoration, $padding) {
+    color: $color;
+    font-family: $fontfamily;
+    font-size: $fontsize;
+    font-weight: $fontweight;
+    text-transform: $texttransform;
+    text-align: $textalign;
+    letter-spacing: $letterspacing;
+    padding: $padding;
+    &:hover,&:focus {
+        text-decoration: $hoverdecoration;
+        outline: 0;
+    }
+}
+
+@mixin nav-sub-font-style {
+    @include nav-font-style($nav-sub-font-family, $nav-sub-default-font-color, $nav-sub-font-text-transform, $nav-sub-font-size, $nav-sub-font-weight, $nav-sub-font-letter-spacing, $nav-sub-font-text-align, $nav-sub-font-hover-decoration, $nav-sub-font-padding);
+}
+
+// font-smoothing
+@mixin font-smoothing {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin clear {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin mobile-nav-caret-font {
+    display: inline-block;
+    font: normal normal normal 14px/1 "Nucleo Outline";
+    font-size: inherit;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+}
+
+// data-aspect-ratio generator
+@mixin data-aspect-ratio ($callout-width, $callout-height) {
+    display: block;
+    max-width: 100%;
+    position: relative;
+    > * {
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    &:before {
+        content: '';
+        display: block;
+        padding-top: calc((#{$callout-height}/#{$callout-width}) * 100%);
+    }    
+}
+
+@mixin bg-img-cover {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+    @if $index {
+      @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+  }
+
+// Convert hex color to RGB color format
+@function hextorgb($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+@mixin form-select-arrow-svg($svg-color:000){
+    $nohex: str-replace(#{$svg-color}, '#', '%23');
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3e%3ctitle%3esmall down%3c/title%3e%3cg class='nc-icon-wrapper' stroke-linecap='square' stroke-linejoin='miter' stroke-width='1' fill='#{$nohex}' stroke='#{$nohex}'%3e%3cpolyline fill='none' stroke='#{$nohex}' stroke-miterlimit='10' points='32%2c20 24%2c28 16%2c20 '/%3e%3c/g%3e%3c/svg%3e");
+}
+
+// Convert px to vw
+$vw-viewport: 1600;
+@function px-to-vw($target-px) {
+  @return ($target-px / 1px) / $vw-viewport * 100 * 1vw;
+}

@@ -1,0 +1,59 @@
+// VARIABLES
+$welcome-section-height: 350px;
+$welcome-stack-min-breakpoint: map-get($grid-breakpoints, md);
+$welcome-stack-max-breakpoint: ($welcome-stack-min-breakpoint - 1);
+
+// WELCOME BANNER v1
+.welcome-banner {
+    min-height: px-to-vw($welcome-section-height);
+    background-size: cover;
+    background-position: center center;
+    background-color: var(--color-darkest);
+    text-align: center;
+    color: $white;
+    font-size: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 3rem 1.5rem;
+    @include rfs($h1-size, padding-block);
+    > .mpContent {
+        font-size: 0;
+        position: absolute;
+        inset: 0;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        &:after {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            content: '';
+            background: rgba($black, 0.5);
+        }
+        + .clickToEditDiv {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 98;
+        }
+        ~ *:not(.clickToEditDiv) {
+            position: relative;
+            color: $white;
+        }
+    }    
+    h1 {
+        line-height: 1.25;
+        margin-bottom: 0;
+        color: $white;
+        position: relative;
+        ~ * {
+            margin-top: 0.5em;
+        }
+    }
+}

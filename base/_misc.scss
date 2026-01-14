@@ -1,0 +1,273 @@
+.hideNav {
+    display: none;
+}
+
+.sitewrap {
+    img {
+        max-width: 100%;
+    }
+    &.login {
+        min-height: 0 !important;
+    }
+}
+
+.priv-hm-title {
+    @extend %h1;
+    // line-height: 1;
+    display: inline-block;
+    @media (max-width:767px) {
+        // font-size: 2.8rem;
+        // letter-spacing: 0;
+        // line-height: 1.14;
+        // margin-bottom: 1em;
+    }
+}
+
+.global-scripts {
+    display: none;
+    &.scriptA9 {
+        display: block;
+        position: fixed;
+        width: 200px;
+        height: 200px;
+        padding: 0 0 15px 0;
+        text-align: center;
+        bottom: 0;
+        border: 1px solid rgba(0,0,0,0.3);
+        transition: .3s ease-in-out;
+        background: #fff;
+        overflow: hidden;
+        z-index: 50000000000;
+        &.minimized {
+            width: 36px;
+            height: 46px;
+            padding: 0 0 15px 10px;
+            bottom: 5%;
+            .global-scripts-head {
+                text-align: right;
+                font-size: 11px;
+                padding: 17px 0px;
+                padding-right: 31px;
+                color: transparent;
+            }
+            .toggle-1 {
+                transform: rotate(0deg);
+            }
+            .toggle-2 {
+                transform: rotateZ(90deg);
+            }
+        }
+        @media screen and (max-width:767px) {
+            display: none;
+        }
+    }
+    &-head {
+        color: #000;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: block;
+        padding: 15px 0 5px;
+        transition: .3s;
+        text-align: center;
+        &:hover {
+            cursor: pointer;
+            .global-scripts-toggle {
+                .toggle-1, toggle-2 {
+                    width: 2px;
+                }
+            }
+        }
+    }
+    &-toggle {
+        width: 100%;
+        height: 44px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: .3s;
+    }
+    .toggle-1 {
+        position: absolute;
+        width: 1px;
+        height: 12px;
+        background: #000;
+        transition: .3s;
+        right: 16px;
+        top: 17px;
+        transform: rotate(45deg);
+    }
+    .toggle-2 {
+        @extend .toggle-1;
+        transform: rotate(-45deg);
+    }
+    .hide-toggle {
+        position: relative;
+        font-size: 12px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        width: 130px;
+        margin: 0 auto;
+        input[type="checkbox"] {
+            margin: 0;
+            top: 3px;
+            right: -4px;
+            position: absolute;
+        }
+    }
+    .fed-scripts,.content-scripts {
+        padding-bottom: 15px;
+    }
+}
+
+a.skip-main {
+    left: -999px;
+    position: absolute;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -999;
+    color: $white;
+    background-color: var(--color-darkest);
+    &:active, &:focus {
+        color: $white;
+        background-color: var(--color-darkest);
+        left: auto;
+        top: auto;
+        width: auto;
+        height: auto;
+        overflow: auto;
+        padding: .5em 1em;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: 400;
+        z-index: 99999;
+    }
+}
+
+// PLUGIN PROPERTIES MODAL SPECIFIC
+body:not([class*="-log"]) {
+    font-size: 12px;
+    background-color: $white;
+    table {
+        border-collapse: separate;
+    }
+    h3 {
+        FONT-SIZE: 12px;
+        FONT-FAMILY: 'Segoe UI', Arial, Sans-Serif;
+        color: #000000;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+    .abut, .abut:hover, .abut:focus, .abut:active {
+        letter-spacing: 0;
+        text-transform: inherit;
+        font-size: inherit;
+    }
+    input.abut, input.abut:hover, input.abut:focus, input.abut:active {
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        border: 1px solid #888;
+        margin: 0 2px;
+        FONT-FAMILY: 'Segoe UI', Arial, Sans-Serif;
+        color: #000000;
+        font-size: 12px;
+        background-color: #eeeeee;
+        background-image: unset;
+        TEXT-ALIGN: center;
+        padding: 0 5px;
+        font-weight: 400;
+        line-height: inherit;
+    }
+}
+
+#datepicker {
+    background: $white;
+    border: 1px solid $black;
+    padding: 10px;
+    > table {
+        border-collapse: separate;
+    }
+}
+
+.RadEditor.Default.reWrapper table {
+    border-collapse: separate;
+}
+
+// Form section title style
+.formSection .rosterletteroff {
+    @extend h4;
+}
+
+// Prevent Calendar Icons from being too small 10/21 //
+.sitewrap .calendarEventIcon { 
+    max-width: none; 
+}
+//Event Manager Search Box Text Color Fix //
+
+div[id$="_Panel1"] input[id$="_txtSearch"] {
+    color: #fff;
+  }
+
+
+// Article & Mobile Event Flyer Fixes for Bee Editor Updates 5/2022
+  
+.mobileFlyer .nl-container .txtTinyMce-wrapper p { 
+    text-align: center!important;
+}
+
+.mobileFlyer table.row { margin: 0!important;  }
+
+.nl-container p, .nl-container ol, .nl-container ul {
+    color: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+}
+.nl-container *:not(strong):not([style*="font-weight"]) {
+    font-weight: inherit !important;
+}
+.nl-container *:not([style*=" color:"]):not([style^="color:"]):not([style*=";color:"]) {
+    color: inherit !important;
+}
+.nl-container *:not([style*="font-family"]) {
+    font-family: inherit !important;
+}
+.nl-container *:not([style*="font-size"]) {
+    font-size: inherit !important;
+}
+table.row {
+    display: revert !important;
+}
+
+/* Signature Field Trash Can Repeating Background Fix */
+
+
+.form-wrap .formQuestionWrapper span.clearSignature { background-repeat: no-repeat!important; }
+
+.bg-gray {
+    background-color: var(--color-lightest);
+    padding-block: 1px;
+}
+
+@include media-breakpoint-down(md) {
+    .tableStack td,
+    .tableStack th {
+        display: block;
+        width: 100% !important;
+        margin-bottom: 10px;
+        text-align: center !important;
+        &[style*="padding-left"] {
+            padding-left: 0 !important;
+        }
+        &[style*="padding-right"] {
+            padding-right: 0 !important;
+        }
+    }
+    .float-img-left,
+    .floatImgLeft img {
+        float: none;
+        padding: 15px 0;
+        display: block;
+        margin: 0 auto;
+    }
+}

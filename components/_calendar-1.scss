@@ -1,0 +1,197 @@
+// VARIABLES
+$cal-events-stack-min-breakpoint: map-get($grid-breakpoints, lg);
+$cal-events-stack-max-breakpoint: ($cal-events-stack-min-breakpoint - 1);
+$cal-event-image-width: 400px;
+
+$cal-event-info-background-color: $white;
+$cal-event-info-hover-background-color: var(--color-lightest);
+$cal-event-info-border-width: 1px;
+$cal-event-info-border-color: #e4e4e4;
+$cal-event-info-hover-border-color: var(--color-lightest);
+
+$cal-event-date-background-color: var(--color-white);
+$cal-event-date-hover-background-color: var(--color-primary);
+$cal-event-date-border-width: 1px;
+$cal-event-date-border-color: #e4e4e4;
+$cal-event-date-hover-border-color: $cal-event-date-hover-background-color;
+$cal-event-date-font-family: var(--font-serif);
+$cal-event-date-font-color: var(--color-primary);
+$cal-event-date-hover-font-color: var(--color-white);
+$cal-event-date-font-letter-spacing: 0;
+$cal-event-date-font-weight: 300;
+$cal-event-date-text-transform: none;
+$cal-event-date-month-font-size: 2.4rem;
+$cal-event-date-number-font-size: 4.8rem;
+$cal-event-date-number-font-family: $cal-event-date-font-family;
+
+$cal-event-title-font-family: var(--font-serif);
+$cal-event-title-font-color: var(--color-secondary);
+$cal-event-title-font-size: 3.6rem;
+$cal-event-title-font-weight: 300;
+$cal-event-title-line-height: 1.22;
+
+$cal-event-cta-link-font-family: var(--base-font-sans-serif);
+$cal-event-cta-link-default-font-color: var(--color-tertiary);
+$cal-event-cta-link-hover-font-color: var(--color-tertiary);
+$cal-event-cta-link-font-size: 1.6rem;
+$cal-event-cta-link-default-font-weight: 400;
+$cal-event-cta-link-hover-font-weight: 400;
+
+
+// CALENDAR PLUGIN v1
+.calendar.opt1 {
+    font-family: var(--base-font-sans-serif);
+    // max-width: 1200px;
+    margin: 0 auto;
+    // padding: 4.1rem 15px 7rem 15px;
+    @media (max-width:$cal-events-stack-max-breakpoint) {
+        text-align: center;
+    }
+    .view-all-link {
+        @include view-all-link;
+        // margin: 2rem 0;
+        margin-top: 3rem;
+        @media (max-width:$cal-events-stack-max-breakpoint) {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+    div[id$="EventsWrapper"] {
+        clear: both;
+        @media (max-width:$cal-events-stack-max-breakpoint) {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: calc($cal-event-image-width + 10rem);
+        }
+        .event-date {
+            display: flex;
+            flex: 0 0 17rem;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: $cal-event-date-background-color;
+            border: $cal-event-date-border-width solid $cal-event-date-border-color;
+            border-right-width: 0;
+            text-transform: $cal-event-date-text-transform;
+            line-height: 1;
+            text-align: center;
+            padding: 15px;
+            transition: all 0.3s ease-in-out;
+            @media (max-width:$cal-events-stack-max-breakpoint) {
+                flex: 0 1 10rem;
+            }
+            br {
+                display: none;
+            }
+            span {
+                font-family: $cal-event-date-font-family;
+                font-size: $cal-event-date-month-font-size;
+                font-weight: $cal-event-date-font-weight;
+                color: $cal-event-date-font-color;
+                transition: color 0.3s ease-in-out;
+                &.calDay {
+                    font-family: $cal-event-date-number-font-family;
+                    font-size: $cal-event-date-number-font-size;
+                }
+            }
+        }
+        .event-image {
+            flex: 0 0 #{$cal-event-image-width};
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: relative;
+            @media (max-width:1199px) {
+                flex-shrink: 1;
+            }
+            @media (max-width:$cal-events-stack-max-breakpoint) {
+                flex: 1 1 calc(100% - 10rem);
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba($black,0);
+                transition: background 0.3s ease-in-out; 
+            }
+            img {
+                visibility: hidden;
+                width: 100%;
+                max-height: 100%;
+                + img {
+                    display: none;
+                }
+            }
+        }
+        .event-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-basis: 100%;
+            background-color: $cal-event-info-background-color;            
+            font-size: 0;            
+            padding: 5rem 7rem 3rem 5.7rem;
+            border: $cal-event-info-border-width solid $cal-event-info-border-color;
+            border-left-width: 0;
+            transition: all 0.3s ease-in-out;
+            @media (max-width:$cal-events-stack-max-breakpoint) {
+                padding: 1.5rem;
+                flex: 1 1 auto;
+                border-left-width: $cal-event-info-border-width;
+                border-top: 0;
+            }
+            .event-title {
+                // @extend %h2;
+                color: $cal-event-title-font-color;
+                font-family: $cal-event-title-font-family;
+                font-weight: $cal-event-title-font-weight;
+                line-height: $cal-event-title-line-height;
+                margin-bottom: 0;
+                @include font-size($cal-event-title-font-size);
+            }
+            .event-cta {
+                color: $cal-event-cta-link-default-font-color;
+                font-family: $cal-event-cta-link-font-family;
+                font-size: $cal-event-cta-link-font-size;
+                font-weight: $cal-event-cta-link-default-font-weight;
+                margin-top: 0.8rem;
+                transition: color 0.3s ease-in-out;
+                span {
+                    margin-left: 12px;
+                    font-size: inherit;
+                }
+            }
+        }
+        > a.event-link {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            &:hover,&:focus {
+                text-decoration: none;
+                .event-date {
+                    background-color: $cal-event-date-hover-background-color;
+                    border-color: $cal-event-date-hover-border-color;
+                    span {
+                        color: $cal-event-date-hover-font-color;
+                    }
+                }
+                .event-info {
+                    background-color: $cal-event-info-hover-background-color;
+                    border-color: $cal-event-info-hover-border-color;
+                    .event-cta {
+                        color: $cal-event-cta-link-hover-font-color;
+                        font-weight: $cal-event-cta-link-hover-font-weight;
+                    }
+                }
+            }
+            @media (max-width:$cal-events-stack-max-breakpoint) {
+                flex-wrap: wrap;
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}

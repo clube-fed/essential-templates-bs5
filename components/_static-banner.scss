@@ -1,0 +1,53 @@
+// VARIABLES
+// See top of variables.scss for banner heights
+
+// STATIC BANNER (typically a content page banner)
+.sitewrap:not(.hasBannerAlbum) {
+    .banner {
+        max-height: $pub-content-banner-max-height;
+        height: px-to-vw($pub-content-banner-max-height);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color: $color-darkest;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        font-size: 0;
+        .mpContent {
+            max-height: inherit;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &:not(.empty-banner) {
+            > .clickToEditDiv {
+                margin-top: -22px !important;
+                position: relative;
+                z-index: 61;
+            }
+        }
+        &.empty-banner {
+            background: transparent;
+        }
+    }
+    &.private .banner {
+        max-height: $priv-content-banner-max-height;
+        height: px-to-vw($priv-content-banner-max-height);
+    }
+    @media (min-width:$desktop-nav-min-brkpt) {
+        &.content.has-no-banner, &.content.has-empty-banner {
+            &:has(header.opt2), &:has(header.opt3), &:has(header.opt4) {
+                > [id^="masterPageUC_MPCA"] {
+                    padding-top: $desktop-navbar-height;
+                }
+            }            
+        }
+    }
+}
