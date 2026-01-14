@@ -1,0 +1,72 @@
+// MAIN CONTENT
+.intro {
+    margin: clamp(5rem,5.3125vw,8.5rem) auto;
+}
+.one-column, .two-column {
+    margin: clamp(5rem,5.3125vw,8.5rem) auto clamp(5rem,6.25vw,10rem);
+}
+.one-column {
+    .private.home & {
+        // margin-top: clamp(5rem,5.3125vw,8.5rem);
+        // margin-bottom: clamp(5rem,6.25vw,10rem);
+    }
+}
+.two-column {
+    .private.home & {
+        margin-top: clamp(5rem,6.25vw,10rem);
+        margin-bottom: clamp(5rem,8.6875vw,13.9rem);
+    }
+}
+
+$overlap-amount: clamp(15rem,15.625vw,25rem);
+.sitewrap:has(.overlaps-banner) .banner .banner-overlay {
+    min-height: $overlap-amount !important;
+    .scroll-down {
+        display: none;
+    }
+}
+.overlaps-banner {    
+    max-width: 1424px;
+    z-index: 98;
+    position: relative;
+    padding-top: 1px;
+    @include media-breakpoint-up(md) {
+        margin-top: calc($overlap-amount * -1);
+    }
+    .intro {
+        margin-top: clamp(1.2rem,4.1875vw,6.7rem);
+        margin-bottom: clamp(1.2rem,4.1875vw,4rem);
+    }
+    .mpContent {
+        @include media-breakpoint-up(md) {
+            color: $white;
+            * {
+                color: $white;
+            }
+        }        
+    }
+}
+
+.border {
+    .private.home & {
+        padding: clamp(3rem,3.125vw,5rem) clamp(1.5rem,3.125vw,5rem);
+        .mpContent {
+            a:not([class*="abut"]):has([class*="icon"]) {
+                font-size: 0;
+                [class*="icon"] {
+                    font-size: 2.4rem;
+                    color: #e4e4e4;
+                    transition: color 0.3s ease-in-out;
+                }
+                &:hover {
+                    [class*="icon"] {
+                        color: $base-font-color;
+                    }
+                }
+            }
+        }
+    }
+    + .border {
+        margin-top: 1.5rem;
+    }
+}

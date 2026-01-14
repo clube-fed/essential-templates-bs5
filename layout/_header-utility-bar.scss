@@ -1,0 +1,146 @@
+// VARIABLES
+$util-bar-quick-links-stack-min-brkpt: map-get($grid-breakpoints, lg);
+$util-bar-quick-links-stack-max-brkpt: ($util-bar-quick-links-stack-min-brkpt - 1);
+
+$util-bar-background-color: var(--color-darkest);
+
+$util-bar-welcome-color: var(--color-white);
+$util-bar-welcome-font-size: 1.5rem;
+$util-bar-welcome-font-weight: 600;
+$util-bar-welcome-text-transform: none;
+$util-bar-welcome-letter-spacing: 0;
+
+$util-bar-quick-link-font-size: 1.5rem;
+$util-bar-quick-link-font-family: var(--base-font-sans-serif);
+$util-bar-quick-link-font-weight: 400;
+$util-bar-quick-link-letter-spacing: 0;
+$util-bar-quick-link-text-transform: none;
+$util-bar-quick-link-line-height: 1.2;
+$util-bar-quick-link-default-color: var(--color-white);
+$util-bar-quick-link-hover-color: $util-bar-quick-link-default-color;
+
+$util-bar-quick-link-icon-font-size: $util-bar-quick-link-font-size;
+$util-bar-quick-link-icon-default-color: $util-bar-quick-link-default-color;
+$util-bar-quick-link-icon-hover-color: $util-bar-quick-link-hover-color;
+
+// HEADER UTILITY BAR
+header.has-util-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-utility-bar {
+    background-color: $util-bar-background-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $white;
+    font-size: 1.4rem;
+    padding: 0 50px;
+    @media (max-width:1299px) {
+        padding: 0 30px;
+    }
+    @media (max-width:$mobile-nav-max-brkpt) {
+        justify-content: center;
+    }
+    @media (max-width:$util-bar-quick-links-stack-max-brkpt) {
+        padding: 0;
+        .has-util-bar & {
+            order: 1;
+        } 
+    }
+    .welcome {
+        font-weight: $util-bar-welcome-font-weight;
+        color: $util-bar-welcome-color;
+        font-size: $util-bar-welcome-font-size;
+        text-transform: $util-bar-welcome-text-transform;
+        letter-spacing: $util-bar-welcome-letter-spacing;
+        @media (max-width:$mobile-nav-max-brkpt) {
+            display: none;
+        }
+    }
+    .quick-links.opt4 {
+        text-align: center;
+        font-size: 0;
+        [class*="icon"] {
+            position: relative;
+            color: $util-bar-quick-link-icon-default-color;
+            font-size: $util-bar-quick-link-icon-font-size;
+            display: inline-block;
+            margin-right: 5px;                       
+        }
+        ul {
+            list-style: none;
+            margin: 0 auto;    
+            padding: 0;
+            width: 100%;
+            float: none;
+            display: flex;
+            justify-content: center;
+            @media (max-width:$util-bar-quick-links-stack-max-brkpt) {
+                display: inline-block;
+                width: auto;
+                padding: 25px 15px;
+            }
+            @include media-breakpoint-down(sm) {
+                padding-block: 1.5rem;
+            }
+            li {
+                display: inline-block;
+                padding: 18px 15px;
+                margin: 0;
+                font-size: 0;
+                vertical-align: top;
+                transition: all .3s ease-in-out; 
+                &:last-child {                    
+                    @media (min-width:$desktop-nav-min-brkpt) {
+                        padding-right: 0;
+                    }
+                }
+                @media (max-width:$util-bar-quick-links-stack-max-brkpt) {
+                    display: block;
+                    padding: 12px 0;
+                }
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    font-size: $util-bar-quick-link-font-size;
+                    font-family: $util-bar-quick-link-font-family;
+                    font-weight: $util-bar-quick-link-font-weight;
+                    text-transform: $util-bar-quick-link-text-transform;
+                    text-align: center;
+                    color: $util-bar-quick-link-default-color;
+                    line-height: $util-bar-quick-link-line-height;
+                    letter-spacing: $util-bar-quick-link-letter-spacing;
+                    text-decoration: none;
+                    position: relative;
+                    transition: opacity 0.3s ease-in-out;
+                    &:hover,&:focus {
+                        text-decoration: underline;
+                        color: $util-bar-quick-link-hover-color;
+                        [class*="icon"] {
+                            color: $util-bar-quick-link-icon-hover-color;
+                        }
+                    }
+                    body.user-is-tabbing & {
+                        &:focus {
+                            text-decoration: none;
+                            outline-style: dashed;
+                            outline-color: $white;
+                            outline-width: 2px;
+                            opacity: 1;
+                        }
+                    }
+                    @media screen and (max-width:$util-bar-quick-links-stack-max-brkpt) {
+                        padding: 0;
+                        text-align: center;
+                        justify-content: center;
+                        // display: flex;
+                        align-items: center;
+                        text-decoration: none !important;
+                    }
+                }            
+            }                
+        }
+    }
+}
