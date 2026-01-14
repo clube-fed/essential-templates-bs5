@@ -1,0 +1,314 @@
+// VARIABLES
+$login-logo-width: 216px;
+$login-logo-height: auto;
+$login-column-width: 570px;
+$login-inputs-max-width: 370px;
+$login-instructions-line-height: $base-line-height;
+$login-instructions-font-color: $white;
+$login-inputs-font-family: var(--base-font-sans-serif);
+$login-inputs-font-color: $white;
+$login-inputs-focus-font-color: $login-inputs-font-color;
+$login-inputs-font-size: 1.6rem;
+$login-inputs-font-weight: 400;
+$login-inputs-border: 1px solid $white;
+$login-inputs-bgcolor: transparent;
+$login-checkbox-font-color: $black;
+$login-checkbox-bgcolor-default: $white;
+$login-checkbox-bgcolor-checked: $login-checkbox-bgcolor-default;
+$login-cookie-and-pw-font-size: 1.4rem;
+$login-cookie-and-pw-font-family: var(--base-font-sans-serif);
+$login-cookie-and-pw-font-weight: 400;
+$login-cookie-font-color: $white;
+$login-forgot-pw-font-color: $login-cookie-font-color;
+$login-forgot-pw-default-text-decor: underline;
+$login-forgot-pw-hover-text-decor: none;
+
+// LOGIN v3
+.login.opt3 {
+    background-color: var(--color-darkest);
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    position: relative;
+    font-size: 1.4rem;
+    overflow: hidden;
+    .login-wrap {
+        position: relative;
+        padding: 3rem;
+        width: calc((#{$login-column-width} / 1600px) * 100%);
+        max-width: $login-column-width;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+            max-width: 100%;
+        }
+        @include media-breakpoint-down(sm) {
+            display: block;
+            max-width: 100%;
+            min-width: 100%;
+            transform: none;
+            top: 0;
+            left: 0;
+            padding: 5%;
+            outline: 0;
+            min-height: 100%;
+        }
+        > div {
+            max-width: $login-inputs-max-width;
+            margin-inline: auto;
+        }
+    }
+    .login-instruct {
+        color: $login-instructions-font-color;
+        font-size: $base-font-size;
+        font-weight: $base-font-weight;
+        line-height: $login-instructions-line-height;
+        text-align: center;
+        padding-bottom: 14px;
+        .mpContent {
+            color: inherit;
+            * {
+                color: inherit;
+            }
+            p {
+                line-height: $login-instructions-line-height;
+            }
+        }
+    }
+    .login-logo {
+        text-align: center;
+        margin-bottom: 19px;
+        @include media-breakpoint-down(sm) {
+            margin-top: 25px;
+        }
+        img {
+            position: relative;
+            padding: 0;
+            max-width: 100%;
+            width: $login-logo-width;
+            height: $login-logo-height;
+        }
+        a {
+            display: inline-block;
+            text-align: center;
+            font-size: 0;
+            &:focus {
+                outline-offset: 0;
+            }
+        }
+    }
+    .login-content {
+        text-align: center;
+        p {
+            color: var(--color-primary);
+        }
+    }
+    .login-inputs {
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        width: 100%;
+        > div[id^="wrapLogin"] {
+            display: inline-block;
+            width: 100%;
+        }
+        // input field labels
+        &_fields {
+            display: none;
+        }
+        // main input fields
+        &_box {
+            input {
+                border: $login-inputs-border;
+                width: 100%;
+                padding: 19px 30px;
+                margin-bottom: 10px;
+                background-color: $login-inputs-bgcolor;
+                outline: 0;
+                text-transform: none;
+                letter-spacing: 0;
+                line-height: 30px;
+                color: $login-inputs-font-color;
+                font-weight: $login-inputs-font-weight;
+                font-family: $login-inputs-font-family;
+                font-size: $login-inputs-font-size;
+                width: 100%;
+                //box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+                @media screen and (max-width:1024px) {
+                    font-size: 1.6rem;
+                }
+                &::placeholder {
+                    color: $login-inputs-font-color;
+                }
+                &[style*="red"]::placeholder {
+                    color: $white;
+                }
+                &:focus {
+                    color: $login-inputs-focus-font-color;
+                    //border: none;
+                }
+            }
+        }
+        // main sigin button
+        &_link {
+            input {
+                margin: 0;
+                margin-bottom: 20px;
+                background: $white;
+                font-family: $button-font;
+                text-transform: uppercase;
+                color: $button-bg;
+                font-size: $button-font-size;
+                font-weight: $button-weight !important;
+                letter-spacing: $button-letter-spacing;
+                //line-height: 44px;
+                border-radius: 0;
+                padding: $button-padding !important;
+                outline: 0;
+                border: $button-border !important;
+                border-color: $white !important;
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+                //background-clip: content-box;
+                transition: all .3s ease-in-out;
+                &:hover,&:focus {
+                    background-color: $button-bg-hover;
+                    color: $button-font-hover-color;
+                    border-color: $button-border-hover-color !important;
+                }
+                &.abut {
+                    @include media-breakpoint-down(sm) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        // cookie/forgot password
+        &_cookie, &_forgotPassword {
+            display: inline-block;
+            position: relative;
+            padding: 0;
+            font-size: 0;
+            line-height: 0;
+            * {
+                color: $login-cookie-font-color;
+                font-family: $login-cookie-and-pw-font-family;
+            }
+            label, a {
+                margin: 0;
+                line-height: 1.2;
+                color: $login-cookie-font-color;
+                font-weight: $login-cookie-and-pw-font-weight;
+                font-size: $login-cookie-and-pw-font-size;
+            }
+            a {
+                color: $login-forgot-pw-font-color;
+                text-decoration: $login-forgot-pw-default-text-decor;
+                &:hover,&:focus {
+                    text-decoration: $login-forgot-pw-hover-text-decor;
+                }
+            }
+        }
+        &_cookie {
+            float: left;
+            span.advLogRemoveChk {
+                font-size: 1.4rem;
+                &:focus {
+                    .user-is-tabbing & {
+                        outline: 1px solid var(--color-darkest);
+                    }                    
+                }
+            }
+            input {
+                display: none;
+                &[type=checkbox]+label:before {
+                    font-family: 'Nucleo Glyph';
+                    content: '';
+                    color: $login-checkbox-font-color;
+                    border-radius: 50%;
+                    //border: 1px solid $color-tertiary;
+                    width: 16px;
+                    height: 16px;
+                    display: inline-block;
+                    position: absolute;
+                    left: 0;
+                    cursor: pointer;
+                    background: $login-checkbox-bgcolor-default;
+                }
+                &[type=checkbox]+label:active:before,
+                &[type=checkbox]+label:hover:before {
+                    background: $login-checkbox-bgcolor-default;
+                }
+                &[type=checkbox]:checked+label:before {
+                    content: "\ed40";
+                    background: $login-checkbox-bgcolor-checked;
+                    line-height: 1;
+                    font-size: 1.6rem;
+                }
+            }
+            label {
+                margin: 0 0 0 30px;
+                cursor: pointer;
+            }
+        }
+        &_forgotPassword {
+            float: right;
+        }
+        .logged-in {
+            a {
+                display: block;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .errLogin {
+        font-size: 16px !important;
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+        //background: #f00;
+        color: #df0000 !important;
+        font-weight: 600;
+    }
+    .login-bg-img {
+        order: 1;
+        flex: 1;
+        font-size: 0;
+        position: absolute;
+        inset: 0;
+        &:after {
+            background: rgba($black,0.6);   
+            content: '';
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            pointer-events: none;
+            @include media-breakpoint-up(lg) {
+                max-width: 800px;
+                background: linear-gradient(to right,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); 
+                right: auto
+            }            
+        }
+        .mpContent {
+            height: 100%;
+            width: 100%;
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .clickToEditDiv {
+            position: absolute;
+            top: 0;
+            z-index: 99;
+        }
+    }
+    #adminDashboard:not([style*=none])~div[id^=masterPageUC_MSTR] & {
+        height: calc(100vh - 46px);
+    }
+}
