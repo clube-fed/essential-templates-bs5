@@ -101,7 +101,8 @@ $quick-links-stack-max-breakpoint: ($quick-links-stack-min-breakpoint - 1);
             padding: 0 5px;
             margin: 0;
             font-size: 0;
-            flex: 0 1 250px;
+            flex: 1;
+            max-width: 250px;
             vertical-align: top;
             transition: all .3s ease-in-out;
             @media screen and (max-width:$quick-links-stack-max-breakpoint) {
