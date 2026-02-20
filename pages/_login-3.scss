@@ -259,9 +259,11 @@ $login-forgot-pw-hover-text-decor: none;
             float: right;
         }
         .logged-in {
+            color: $login-instructions-font-color;
             a {
                 display: block;
                 margin-bottom: 15px;
+                color: $login-instructions-font-color;
             }
         }
     }
