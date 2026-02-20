@@ -63,13 +63,13 @@ $quick-links-stack-max-breakpoint: ($quick-links-stack-min-breakpoint - 1);
     span[class*="icon"] {
         position: relative;
         color: $white;
-        font-size: $quick-link-icon-font-size;
+        @include font-size($quick-link-icon-font-size);
         width: 100%;
         display: inline-block;
         margin: 0 auto 1.4rem;
         text-decoration: none !important;
         @media (max-width:$quick-links-stack-max-breakpoint) {
-            font-size: 2rem;
+            //font-size: 2rem;
             margin: 0;
             flex: 0 1 1.6em;
             display: inline-block;
@@ -111,7 +111,7 @@ $quick-links-stack-max-breakpoint: ($quick-links-stack-min-breakpoint - 1);
             a {
                 display: inline-block;
                 width: 100%;
-                font-size: $quick-link-font-size;
+                @include font-size($quick-link-font-size);
                 font-family: $quick-link-font-family;
                 font-weight: $quick-link-font-weight;
                 text-transform: $quick-link-font-text-transform;
