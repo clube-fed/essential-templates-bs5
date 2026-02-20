@@ -31,7 +31,9 @@ $overlap-amount: clamp(15rem,15.625vw,25rem);
     position: relative;
     padding-top: 1px;
     @include media-breakpoint-up(md) {
-        margin-top: calc($overlap-amount * -1);
+        .sitewrap & {
+            margin-top: calc($overlap-amount * -1);
+        }
     }
     .intro {
         margin-top: clamp(1.2rem,4.1875vw,6.7rem);
