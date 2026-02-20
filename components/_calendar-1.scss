@@ -85,13 +85,13 @@ $cal-event-cta-link-hover-font-weight: 400;
             }
             span {
                 font-family: $cal-event-date-font-family;
-                font-size: $cal-event-date-month-font-size;
+                @include font-size($cal-event-date-month-font-size);
                 font-weight: $cal-event-date-font-weight;
                 color: $cal-event-date-font-color;
                 transition: color 0.3s ease-in-out;
                 &.calDay {
                     font-family: $cal-event-date-number-font-family;
-                    font-size: $cal-event-date-number-font-size;
+                    @include font-size($cal-event-date-number-font-size);
                 }
             }
         }
@@ -155,7 +155,7 @@ $cal-event-cta-link-hover-font-weight: 400;
             .event-cta {
                 color: $cal-event-cta-link-default-font-color;
                 font-family: $cal-event-cta-link-font-family;
-                font-size: $cal-event-cta-link-font-size;
+                @include font-size($cal-event-cta-link-font-size);
                 font-weight: $cal-event-cta-link-default-font-weight;
                 margin-top: 0.8rem;
                 transition: color 0.3s ease-in-out;
