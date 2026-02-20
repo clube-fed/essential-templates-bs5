@@ -114,6 +114,7 @@
                         &.selected {
                             background: $tabstrip-selected-bg !important;
                             border-color: $tabstrip-selected-top-border-color !important;
+                            font-weight: $tabstrip-tabs-font-selected-weight;
                             .wrap {
                                 color: $tabstrip-selected-font-color;
                             }
