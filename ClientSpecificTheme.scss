@@ -1,3 +1,13 @@
+$rfs-base-value: 1.6rem !default; // font-size minimum
+// BOOTSTRAP
+@import "bootstrap/scss/functions";
+@import "helpers/bs-var-overrides"; // Bootstrap variable overrides
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+// Include any default map overrides here
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+// END BOOTSTRAP
 @import 'helpers/variables';
 @import 'helpers/mixins';
 @import 'base/reset';
