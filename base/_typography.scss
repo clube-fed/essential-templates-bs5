@@ -67,7 +67,7 @@ h6, .h6, %h6 {
 p {
     margin: 0;
     font-family: $base-font-family;
-    font-size: $base-font-size;
+    font-size: var(--base-font-size);
     color: $base-font-color;
     letter-spacing: $base-font-letter-spacing;
     line-height: $base-line-height;
