@@ -61,28 +61,33 @@ $yardage-line-height: $base-line-height;
         }
         
     }
-    .RadTabStrip_Tab_responsive .levelwrap.level1 > ul {
-        > li > a {
-            // font-size: 1.8rem !important;
-            // letter-spacing: 0.32rem;
-            // font-weight: 400;
-            padding-left: 2rem !important;
-            padding-right: 2rem !important;
+    .RadTabStrip_Tab_responsive .levelwrap.level1 {
+        > ul {
+            > li > a {
+                // font-size: 1.8rem !important;
+                // letter-spacing: 0.32rem;
+                // font-weight: 400;
+                padding-left: 2rem !important;
+                padding-right: 2rem !important;
+            }
         }
-        @media (min-width:1024px) {
-            display: flex;
-            justify-content: stretch;
-            max-width: 1000px;
-            margin: 0 auto;
-            > li {
-                flex: 1;
-                > a {
-                    padding-left: 1.4rem !important;
-                    padding-right: 1.4rem !important;
-                    // padding-top: 2.3rem !important;
-                    // padding-bottom: 2.6rem !important;
+        &:not(.h-scrolling) {
+            > ul {
+                display: flex;
+                justify-content: stretch;
+                max-width: 1000px;
+                margin: 0 auto;
+                > li {
+                    flex: 1;
+                    > a {
+                        padding-left: 1.4rem !important;
+                        padding-right: 1.4rem !important;
+                        // padding-top: 2.3rem !important;
+                        // padding-bottom: 2.6rem !important;
+                    }
                 }
             }
+
         }
     }
     [id$="_tblTop"] {
@@ -114,8 +119,9 @@ $yardage-line-height: $base-line-height;
         &.level1 > ul > li > a .innerWrap {
             // letter-spacing: 0.438rem;
         }
-        > ul {
-            @media (max-width:1023px) {
+
+        &.h-scrolling {
+            > ul {
                 position: relative;
                 text-align: left;
                 padding: 0 0 0 135px !important;
@@ -139,7 +145,7 @@ $yardage-line-height: $base-line-height;
                     color: $tabstrip-unselected-font-color;
                     height:auto;
                     max-width:160px;
-                }
+                }                
             }
         }
     }
@@ -347,6 +353,7 @@ $yardage-line-height: $base-line-height;
 .hole-info-wrap .gold:before {background-color:#a2926b;}
 .hole-info-wrap .red:before {background-color:#c73e3e;}
 .hole-info-wrap .black:before {background-color:#000000;}
+.hole-info-wrap .yellow:before {background-color:#ffc107;}
 .hole-info-wrap .green:before {background-color:#336e19;}
 .hole-info-wrap .silver:before {background-color:#C0C0C0;}
 .hole-info-wrap .turquoise:before {background-color:#01707e;}
