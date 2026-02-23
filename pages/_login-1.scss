@@ -269,6 +269,9 @@ $login-forgot-pw-hover-text-decor: none;
         //background: #f00;
         color: #df0000 !important;
         font-weight: 600;
+        a {
+            color: inherit;
+        }
     }
     .login-bg-img {
         font-size: 0;
