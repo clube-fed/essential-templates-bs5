@@ -17,6 +17,7 @@
     --font-sans-serif2: #{$base-font-sans-serif2};
     --font-serif: #{$base-font-serif};
     --font-serif2: #{$base-font-serif2};
+    --base-font-size: #{$base-font-size};
 }
 
 html {
@@ -27,7 +28,7 @@ html {
 }
 
 body {
-    font-size: $base-font-size;
+    font-size: var(--base-font-size);
     color: $base-font-color;
     font-weight: $base-font-weight;
     font-family: $base-font-family;
