@@ -1,3 +1,12 @@
+$rfs-base-value: 1.6rem !default; // font-size minimum
+// BOOTSTRAP
+@import "bootstrap/scss/functions";
+@import "helpers/bs-var-overrides"; // Bootstrap variable overrides
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+// Include any default map overrides here
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
 /* Mobile */
 @import 'helpers/variables';
 @import 'base/typography';
@@ -15,12 +24,12 @@ img { max-width:100%; }
 h1, .h1, %h1 {
 	@extend %h1;
 	*{
-		font-size: $h1-size;
+		@include font-size($h1-size);
 		@media(max-width: 1100px){
-			font-size: 3.2rem;
+			// font-size: 3.2rem;
 		}
 		@media(max-width: 1024px){
-			font-size: 3rem;
+			// font-size: 3rem;
 		}
 	}
 }
@@ -28,71 +37,71 @@ h1, .h1, %h1 {
 h2, .h2, %h2 {
 	@extend %h2;
 	*{
-		font-size: $h2-size;
+		@include font-size($h2-size);
 	}
 }
 
 h3, .h3, %h3 {
 	@extend %h3;
 	*{
-		font-size: $h3-size;
+		@include font-size($h3-size);
 	}
 }
 
 h4, .h4, %h4 {
 	@extend %h4;
 	*{
-		font-size: $h4-size;
+		@include font-size($h4-size);
 	}
 }
 
 h5, .h5, %h5 {
 	@extend %h5;
 	*{
-		font-size: $h5-size;
+		@include font-size($h5-size);
 	}
 }
 
 h6, .h6, %h6 {
 	@extend %h6;
 	*{
-		font-size: $h6-size;
+		@include font-size($h6-size);
 	}
 }
 
 p {
     margin: 0;
     font-family: $base-font-family;
-    font-size: $base-font-size;
+    font-size: var(--base-font-size);
     color: $base-font-color;
     letter-spacing: $base-font-letter-spacing;
     line-height: $base-line-height;
     font-weight: $base-font-weight;
 	*{
-		font-size: $base-font-size;
+		font-size: var(--base-font-size);
 	}
 }
 
 ul,ol{
 	padding-left: 20px;
 	font-family: $base-font-family;
-	font-size: $base-font-size;
+	font-size: var(--base-font-size);
 	color: $base-font-color;
 	letter-spacing: $base-font-letter-spacing;
 	line-height: $base-line-height;
 	font-weight: $base-font-weight;
 	*{
-		font-size: $base-font-size;
+		font-size: var(--base-font-size);
 	}
 	h1, .h1, %h1 {
 		@extend %h1;
 		*{
-			font-size: $h1-size;
+			@include font-size($h1-size);
 			@media(max-width: 1100px){
-				font-size: 3.2rem;
+				// font-size: 3.2rem;
 			}
 			@media(max-width: 1024px){
-				font-size: 3rem;
+				// font-size: 3rem;
 			}
 		}
 	}
@@ -100,35 +109,35 @@ ul,ol{
 	h2, .h2, %h2 {
 		@extend %h2;
 		*{
-			font-size: $h2-size;
+			@include font-size($h2-size);
 		}
 	}
 
 	h3, .h3, %h3 {
 		@extend %h3;
 		*{
-			font-size: $h3-size;
+			@include font-size($h3-size);
 		}
 	}
 
 	h4, .h4, %h4 {
 		@extend %h4;
 		*{
-			font-size: $h4-size;
+			@include font-size($h4-size);
 		}
 	}
 
 	h5, .h5, %h5 {
 		@extend %h5;
 		*{
-			font-size: $h5-size;
+			@include font-size($h5-size);
 		}
 	}
 
 	h6, .h6, %h6 {
 		@extend %h6;
 		*{
-			font-size: $h6-size;
+			@include font-size($h6-size);
 		}
 	}
 }
