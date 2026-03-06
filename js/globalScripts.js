@@ -160,10 +160,10 @@ $j('header .collapse').on({
 });
 
 const myCollapsible = document.getElementById('navbarSupportedContent')
-myCollapsible.addEventListener('show.bs.collapse', event => {
+/*myCollapsible.addEventListener('show.bs.collapse', event => {
   // do something...
   console.log("FIRED");
-})
+})*/
 
 var everythingButTheNav = $j('*:not("header, header *")');
 
