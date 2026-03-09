@@ -1,4 +1,7 @@
 //.sitewrap {
+    [class*="col"]:not(:first-child) > table[id$="_tblTop"]:first-of-type {
+        margin-top: clamp(3rem,4.9375vw,7.9rem);
+    }
     [id$="_tblTop"] {
         margin: 0;
         table-layout: fixed;
