@@ -26,6 +26,20 @@ $quick-links-stack-max-breakpoint: ($quick-links-stack-min-breakpoint - 1);
     position: relative;
     padding: 3rem 1.5rem;
     @include rfs($h1-size, padding-block);
+    @media (min-width:$desktop-nav-min-brkpt) {
+        [id$="_dpPlaceholder"]:has(header.opt2),
+        [id$="_dpPlaceholder"]:has(header.opt3),
+        [id$="_dpPlaceholder"]:has(header.opt4) {
+            + [id$="_dpPlaceholder"] & {
+                padding-top: 14.6rem;
+                min-height: px-to-vw(510px);
+                > .mpContent + .clickToEditDiv {
+                    top: auto;
+                    bottom: 0;
+                }
+            }
+        }
+    } 
     > .mpContent {
         font-size: 0;
         position: absolute;
