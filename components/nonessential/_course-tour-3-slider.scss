@@ -2,10 +2,10 @@
 
 $course-tour-image-height: 665px;
 
-$arrows-color: #018922;
+$arrows-color: var(--color-primary);
 $arrows-size: 3.0rem;
 
-$slick-dots-color: #018922;
+$slick-dots-color: var(--color-primary);
 $slick-dots-size: 10px;
 
 .course-tour.opt3-prem.slider {
@@ -68,7 +68,7 @@ $slick-dots-size: 10px;
               }
               &:before {
                   font-family: 'Nucleo Outline';
-                  font-size: $arrows-size;
+                  @include font-size($arrows-size);
                   color: $arrows-color;
                   @media(max-width: 767px) {
                       font-size: 16px;

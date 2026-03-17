@@ -16,7 +16,7 @@ $tee-color-gold: #d49341;
 /* Colored List Items */
 
 $hole-number-font-size: 3.0rem;
-$hole-number-font-color: $color-secondary;
+$hole-number-font-color: var(--color-secondary);
 $hole-number-text-transform: none;
 $hole-number-letter-spacing: 0;
 $hole-number-line-height: 1.24;
@@ -26,26 +26,26 @@ $course-tour-img-width: 650px;
 
 /* Hole Description Strong Text Color */
 
-$hole-description-text-color: #293337;
+$hole-description-text-color: var(--color-tertiary);
 
 $course-tour-stack-max-breakpoint: 991px;
 
 
 .course-tour.opt1-prem {
-  max-width: 1430px;
-  padding: 50px 0;
+  max-width: 1320px;
+  padding: 50px $grid-gutter-width / 2;
   margin: 0 auto;
     .container {
-        max-width: 1170px;
+        max-width: none;
         width: 100%;
         text-align: center;
         padding: 0;
         @media(max-width: 1199px) {
-          padding: 0 1.5rem;
+          padding: 0 $grid-gutter-width / 2;
         }
       [id$="_radTabsTop"] .levelwrap > ul > li > a {
         padding: $tabstrip-number-padding!important;
-        font-size: $tabstrip-number-font-size!important;
+        @include font-size($tabstrip-number-font-size !important);
         letter-spacing: $tabstrip-number-letter-spacing!important;
         @media(max-width: $course-tour-stack-max-breakpoint) {
           padding-left: 2rem !important;
@@ -57,7 +57,7 @@ $course-tour-stack-max-breakpoint: 991px;
     .hole-wrap {
       div:nth-child(1) {
       h2, h3 {
-        font-size: $hole-number-font-size;
+        @include font-size($hole-number-font-size);
         color: $hole-number-font-color;
         $hole-number-text-transform: none;
         letter-spacing: $hole-number-letter-spacing;
@@ -82,8 +82,8 @@ $course-tour-stack-max-breakpoint: 991px;
               display: inline-block;
               margin: 0 20px 0 0;
               color: #54595f;
-              font-family: $base-font-sans-serif;
-              font-size: $par-distance-font-size;
+              font-family: var(--font-sans-serif);
+              @include font-size($par-distance-font-size);
               @media(max-width: 667px) {
                 display: block;
                 text-align: center;

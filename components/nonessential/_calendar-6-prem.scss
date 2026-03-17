@@ -2,35 +2,35 @@
 
 $cal-events-stack-max-breakpoint: 991px;
 
-$cal-strip-background-color: $color-secondary;
+$cal-strip-background-color: var(--color-secondary);
 
-$cal-event-month-font-family: $base-font-sans-serif2;
+$cal-event-month-font-family: var(--font-sans-serif2);
 $cal-event-month-font-size: 1.4rem;
 $cal-event-month-font-weight: 400;
 $cal-event-month-letter-spacing: 2px;
 $cal-event-month-text-transform: uppercase;
 
-$cal-event-date-font-family: $base-font-sans-serif2;
+$cal-event-date-font-family: var(--font-sans-serif2);
 $cal-event-date-font-size: 3.0rem;
 $cal-event-date-font-weight: 400;
 $cal-event-date-letter-spacing: 0;
 
 $cal-event-active-background-color: #fff;
-$cal-event-active-top-border: 5px solid #018922;
-$cal-event-active-date-month-color: #018922;
+$cal-event-active-top-border: 5px solid var(--color-primary);
+$cal-event-active-date-month-color: var(--color-primary);
 
 $cal-day-header-font-size: 2.4rem;
-$cal-day-header-font-family: $base-font-sans-serif;
-$cal-day-header-font-color: $color-secondary;
+$cal-day-header-font-family: var(--font-sans-serif);
+$cal-day-header-font-color: var(--color-secondary);
 $cal-day-header-font-weight: 700;
-$cal-day-header-line-height: 30px;
+$cal-day-header-line-height: 1.25;
 
-$cal-event-title-font-family: $base-font-sans-serif2;
+$cal-event-title-font-family: var(--font-sans-serif2);
 $cal-event-title-font-size: 1.6rem;
 $cal-event-title-font-weight: 400;
 $cal-event-title-letter-spacing: 0;
-$cal-event-title-default-color: #555;
-$cal-event-title-hover-color: $color-primary;
+$cal-event-title-default-color: var(--color-tertiary);
+$cal-event-title-hover-color: var(--color-primary);
 $cal-event-title-line-height: 1.42;
 
 
@@ -95,13 +95,13 @@ $cal-event-title-line-height: 1.42;
         .slider-for {            
             .cal-date {
                 color: $cal-day-header-font-color;
-                font-size: $cal-day-header-font-size;
-                line-height: 30px;
+                @include font-size($cal-day-header-font-size);
+                // line-height: 30px;
                 font-family: $cal-day-header-font-family;
                 font-weight: $cal-day-header-font-weight;
                 line-height: $cal-day-header-line-height;
                 @media(max-width: 390px) {
-                    font-size: 1.2rem;
+                    // font-size: 1.2rem;
                 }
             }
         }
@@ -161,7 +161,7 @@ $cal-event-title-line-height: 1.42;
         }
         .cal-date {
             font-family: $cal-event-month-font-family;
-            font-size: $cal-event-month-font-size;
+            @include font-size($cal-event-month-font-size);
             font-weight: $cal-event-month-font-weight;
             letter-spacing: $cal-event-month-letter-spacing;
             text-transform: $cal-event-month-text-transform;
@@ -187,13 +187,13 @@ $cal-event-title-line-height: 1.42;
                 display:none;
             }
             > div {
-                font-size: 3.0rem;
+                // font-size: 3.0rem;
                 font-family: $cal-event-date-font-family;
-                font-size: $cal-event-date-font-size;
+                @include font-size($cal-event-date-font-size);
                 font-weight: $cal-event-date-font-weight;
                 letter-spacing: $cal-event-date-letter-spacing;
                 @media(max-width: 767px) {
-                    font-size: 2.4rem;
+                    // font-size: 2.4rem;
                 }
                 
             }
@@ -238,7 +238,7 @@ $cal-event-title-line-height: 1.42;
                 list-style-type: disc;
                 list-style-position: inside;
                 font-family: $cal-event-title-font-family;
-                font-size: $cal-event-title-font-size;
+                @include font-size($cal-event-title-font-size);
                 font-weight: $cal-event-title-font-weight;
                 color: $cal-event-title-default-color;
                 line-height: $cal-event-title-line-height;

@@ -11,17 +11,17 @@ $opt-in-checkbox-label-leter-spacing: $base-font-letter-spacing;
 $opt-in-button-max-width: 190px;
 $opt-in-button-font-size: 1.6rem;
 $opt-in-button-text-transform: none;
-$opt-in-button-color: #018922;
+$opt-in-button-color: var(--color-primary);
 $opt-in-button-background: none;
-$opt-in-button-border: 1px solid #018922;
+$opt-in-button-border: 1px solid var(--color-primary);
 $opt-in-button-font-weight: 400;
 $opt-in-button-letter-spacing: 0;
 $opt-in-button-border-radius: 5px;
 
-$opt-in-button-hover-bkgrnd: #018922;
-$opt-in-button-hover-font-color: $white;
+$opt-in-button-hover-bkgrnd: var(--color-primary);
+$opt-in-button-hover-font-color: var(--color-white);
 
-$opt-in-checkbox-checked-background: #018922;
+$opt-in-checkbox-checked-background: var(--color-primary);
 
 // OPT-IN GROUPS PLUGIN v1
 .opt-in.opt1 {
@@ -51,7 +51,7 @@ $opt-in-checkbox-checked-background: #018922;
             width: 100%;
             max-width: $opt-in-button-max-width;
             color: $opt-in-button-color;
-            font-size: $opt-in-button-font-size;
+            @include font-size($opt-in-button-font-size);
             text-transform: $opt-in-button-text-transform;
             background: $opt-in-button-background;
             border: $opt-in-button-border;

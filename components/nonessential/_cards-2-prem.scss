@@ -4,12 +4,12 @@ $small-card-width-value: 548;
 $card-height-value: 600; 
 
 $caption-font-size: 3.0rem;
-$caption-font-family: $base-font-sans-serif;
+$caption-font-family: var(--font-sans-serif);
 
 $cards-stack-max-breakpoint: 667px;
 
 // CARDS v2 
-.card-deck.opt2-prem {
+.card-group.opt2-prem {
     max-width: 1600px;
     padding: 50px 0;
     margin: 0 auto;
@@ -101,7 +101,7 @@ $cards-stack-max-breakpoint: 667px;
                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e6000000',GradientType=0 );
             }
             .mpContent {
-                font-size: $caption-font-size;
+                @include font-size($caption-font-size);
                 font-family: $caption-font-family;        
                 margin-bottom: 0;
                 line-height: 1.2;

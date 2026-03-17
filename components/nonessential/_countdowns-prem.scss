@@ -1,18 +1,18 @@
 
-$countdown-number-font-color: $color-secondary;
+$countdown-number-font-color: var(--color-secondary);
 
-$opt2-font-link-color: #018922;
+$opt2-font-link-color: var(--color-primary);
 
-$countdown-opt1-date-color: $white;
-$countdown-opt2-date-color: $color-secondary;
+$countdown-opt1-date-color: var(--color-white);
+$countdown-opt2-date-color: var(--color-secondary);
 $countdown-date-size: 1.4rem;
 $countdown-letter-spacing: 2px;
 $countdown-text-transform: uppercase;
 $countdown-font-weight: 700;
 
-$h3-opt1-font-color: $white;
-$h3-opt2-font-color: $color-secondary;
-$h3-font-family: $base-font-sans-serif;
+$h3-opt1-font-color: var(--color-white);
+$h3-opt2-font-color: var(--color-secondary);
+$h3-font-family: var(--font-sans-serif);
 $h3-font-weight: 400;
 $h3-font-size: 3.0rem;
 
@@ -92,11 +92,11 @@ $h3-font-size: 3.0rem;
                             font-style: normal;
                         }
                         h5,h6 {
-                            $countdown-opt1-date-color: $white;
-                            $countdown-date-size: 1.4rem;
-                            $countdown-letter-spacing: 2px;
-                            $countdown-text-transform: uppercase;
-                            $countdown-font-weight: 700;
+                            color: $countdown-opt1-date-color;
+                            @include font-size($countdown-date-size);
+                            letter-spacing: $countdown-letter-spacing;
+                            text-transform: $countdown-text-transform;
+                            font-weight: $countdown-font-weight;
                             margin-bottom: 1.5rem;
                         }
                         h3 {
@@ -104,7 +104,7 @@ $h3-font-size: 3.0rem;
                             line-height: 1.38;
                             font-family: $h3-font-family;
                             font-weight: $h3-font-weight;
-                            font-size: $h3-font-size;
+                            @include font-size($h3-font-size);
                         }
                         > a {
                             
@@ -266,6 +266,8 @@ $h3-font-size: 3.0rem;
         //margin: 0;
         padding: 0 15px;
         max-width: none;
+        width: auto;
+        flex: 0 0 auto;
         &.col-xs-3 {
             width: 25%; 
         }

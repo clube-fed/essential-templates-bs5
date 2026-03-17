@@ -2,11 +2,11 @@
 
 $course-image-height: 900px;
 
-$hole-title-font-family: $base-font-sans-serif;
-$hole-title-color: #182232;
+$hole-title-font-family: var(--font-sans-serif);
+$hole-title-color: var(--color-secondary);
 $hole-title-size: 2.4rem;
 $hole-title-font-weight: 400;
-$hole-title-font-family: $base-font-sans-serif;
+$hole-title-font-family: var(--font-sans-serif);
 
 .course-tour.opt5-prem {
   position: relative;
@@ -81,7 +81,7 @@ $hole-title-font-family: $base-font-sans-serif;
         font-family: $hole-title-font-family;
         font-weight: $hole-title-font-weight;
         color: $hole-title-color;
-        font-size: $hole-title-size;
+        @include font-size($hole-title-size);
         margin-bottom: 0;
         white-space: nowrap;
         @media(max-width: 767px) {

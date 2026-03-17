@@ -3,26 +3,26 @@
 $article-stack-max-breakpoint: 991px;
 $articles-max-width: 400px;
 
-$news-title-background-color: $color-secondary;
-$news-title-font-family: $base-font-sans-serif;
+$news-title-background-color: var(--color-secondary);
+$news-title-font-family: var(--font-sans-serif);
 $news-title-font-size: 1.4rem;
 $news-title-text-transform: uppercase;
 $news-title-font-weight: 800;
 $news-title-letter-spacing: 2px;
 
 $news-subject-font-family: $base-font-sans-serif;
-$news-subject-font-color: $color-secondary;
+$news-subject-font-color: var(--color-secondary);
 $news-subject-font-size: 2.4rem;
 $news-subject-font-weight: 400;
 $news-subject-letter-spacing: 0;
-$news-subject-line-height: 30px;
+$news-subject-line-height: 1.25;
 $news-subject-text-transform: none;
 
-$article-arrows-color: #018922;
+$article-arrows-color: var(--color-primary);
 $article-image-width: 400px;
 $article-image-height: 400px;
 
-$slick-dots-color: #018922;
+$slick-dots-color: var(--color-primary);
 $slick-dots-size: 10px;
 
 // ARTICLES v3 GK Components
@@ -48,7 +48,7 @@ $slick-dots-size: 10px;
                 color: #fff;
                 margin: 0;
                 font-family: $news-title-font-family;
-                font-size: $news-title-font-size;
+                @include font-size($news-title-font-size);
                 text-transform: $news-title-text-transform;
                 font-weight: $news-title-font-weight;
                 letter-spacing: $news-title-letter-spacing;
@@ -102,7 +102,7 @@ $slick-dots-size: 10px;
         }
         .subject {
             font-family: $news-subject-font-family;
-            font-size: $news-subject-font-size;
+            @include font-size($news-subject-font-size);
             font-weight: $news-subject-font-weight;
             letter-spacing: $news-subject-letter-spacing;
             color: $news-subject-font-color;

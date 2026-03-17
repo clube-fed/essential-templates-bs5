@@ -6,7 +6,7 @@ $cross-panel-top-bott-padding: 65px;
 $cross-stack-max-breakpoint: 991px;
 
 $cross-stack-min-brkpt: ($cross-stack-max-breakpoint + 1);
-$cross-stack-text-bg-color: $color-secondary;
+$cross-stack-text-bg-color: var(--color-secondary);
 $cross-cta-link-bg: transparent;
 $cross-cta-link-bg-hover: $button-bg-hover;
 
@@ -15,13 +15,13 @@ $cross-cta-link-bg-hover: $button-bg-hover;
 
 $article-image-width: 200px;
 $article-image-height: 250px;
-$article-image-border: 5px solid #fff;
+$article-image-border: 5px solid var(--color-white);
 
 /* Article Subject Styles */
 
-$article-text-font-family: $base-font-sans-serif;
+$article-text-font-family: var(--font-sans-serif);
 $article-text-font-size: 3.0rem;
-$article-text-line-height: 36px;
+$article-text-line-height: 1.2;
 $article-text-text-transform: none;
 $article-text-letter-spacing: 0;
 
@@ -40,7 +40,7 @@ $button-font-weight: 400;
 
 // CROSS-MARKETING PANEL Articles Opt 5
 
-.crossmarketing-panel.articles.opt5-prem {
+.crossmarketing-panel-prem.articles.opt5-prem {
     justify-content: center;
     position: relative;
     padding: $cross-panel-top-bott-padding 0;
@@ -142,31 +142,31 @@ $button-font-weight: 400;
                     }
                     span {
                         display: block;
-                        color: #fff;
+                        color: var(--color-white);
                         font-family: $article-text-font-family;
-                        font-size: $article-text-font-size;
+                        @include font-size($article-text-font-size);
                         line-height: $article-text-line-height;
                         text-transform: $article-text-text-transform;
                         margin-bottom: 25px;
                         @media (max-width: 767px) {
-                            font-size: $mobile-text-font-size;
-                            line-height: $mobile-text-line-height;
+                            // font-size: $mobile-text-font-size;
+                            // line-height: $mobile-text-line-height;
                         }
                     }
 
                 }
                 .abut {
-                    border: 1px solid #fff;
+                    border: 1px solid var(--color-white);
                     background: 0;
                     border-radius: $button-radius;
                     font-weight: $button-font-weight;
                     text-transform: $button-text-transform;
                     letter-spacing: $button-letter-spacing;
-                    font-size: $button-font-size;
+                    @include font-size($button-font-size);
                     &:hover {
-                        background: #fff;
-                        color: $color-primary;
-                        border: 1px solid $color-primary;
+                        background: var(--color-white);
+                        color: var(--color-primary);
+                        border: 1px solid var(--color-primary);
                     }
                 }
             }
@@ -188,7 +188,7 @@ $button-font-weight: 400;
             display: flex;
             flex-direction: column;
             .clickToEditDiv {
-                border-color: $color-darkest;
+                border-color: var(--color-darkest);
                 border-style: solid;
                 border-width: 1px 0;
                 padding: 0.5rem 1rem !important;

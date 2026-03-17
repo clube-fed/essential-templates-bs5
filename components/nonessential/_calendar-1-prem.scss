@@ -3,23 +3,23 @@
 $cal-events-stack-max-breakpoint: 991px;
 $cal-event-img-width-value: 370; // omit unit from value
 $cal-event-img-height-value: 225; // omit unit from value
-$cal-event-info-background-color: #fff;
-$cal-event-date-font-family: $base-font-sans-serif;
-$cal-event-date-font-color: #555555;
+$cal-event-info-background-color: var(--color-white);
+$cal-event-date-font-family: var(--font-sans-serif);
+$cal-event-date-font-color: var(--color-tertiary);
 $cal-event-date-font-size: 1.6rem;
 $cal-event-date-font-weight: 400;
 $cal-event-date-text-transform: none;
 $cal-event-date-letter-spacing: 0;
-$cal-event-title-font-family: $base-font-serif;
+$cal-event-title-font-family: var(--font-serif);
 $cal-event-title-font-size: 2.4rem;
 $cal-event-title-font-weight: 400;
 $cal-event-title-letter-spacing: 0;
-$cal-event-title-default-color: $color-secondary;
-$cal-event-title-hover-color: #018922;
+$cal-event-title-default-color: var(--color-secondary);
+$cal-event-title-hover-color: var(--color-primary);
 $cal-event-title-line-height: 34px;
-$cal-event-cta-icon-default-color: #d6d6d6;
+$cal-event-cta-icon-default-color: var(--color-lightest);
 $cal-event-cta-icon-hover-color: $cal-event-cta-icon-default-color;
-$cal-arrow-color: #018922;
+$cal-arrow-color: var(--color-primary);
 $cal-arrow-font-size: 3.0rem;
 
 
@@ -122,7 +122,7 @@ $cal-arrow-font-size: 3.0rem;
                 display: block;
                 content: '\eb01';
                 font-family: 'Nucleo Glyph';
-                font-size: $cal-arrow-font-size;
+                @include font-size($cal-arrow-font-size);
                 color: $cal-arrow-color;
             }
           }
@@ -219,7 +219,7 @@ $cal-arrow-font-size: 3.0rem;
                     .event-date {
                         color: $cal-event-date-font-color;
                         font-family: $cal-event-date-font-family;
-                        font-size: $cal-event-date-font-size;
+                        @include font-size($cal-event-date-font-size);
                         font-weight: $cal-event-date-font-weight;
                         letter-spacing: $cal-event-date-letter-spacing;
                         text-transform: $cal-event-date-text-transform;
@@ -229,20 +229,20 @@ $cal-arrow-font-size: 3.0rem;
                     }
                     .event-title {
                         font-family: $cal-event-title-font-family;
-                        font-size: $cal-event-title-font-size;
+                        @include font-size($cal-event-title-font-size);
                         font-weight: $cal-event-title-font-weight;
                         letter-spacing: $cal-event-title-letter-spacing;
                         color: $cal-event-title-default-color;
                         line-height: $cal-event-title-line-height;
                         transition: color 0.3s ease-in-out;
                         @media(max-width: 991px) {
-                            font-size:rem(24px);
+                            // font-size:rem(24px);
                             line-height: 34px;
                             max-width: 100%;
 
                         }
                     @media(max-width: 568px) {
-                        font-size: rem(21px);
+                        // font-size: rem(21px);
                         line-height: 30px;
                     
                     }

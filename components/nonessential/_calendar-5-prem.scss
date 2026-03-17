@@ -2,30 +2,30 @@
 $cal-events-stack-max-breakpoint: 991px;
 $cal-event-img-width-value: 370; 
 $cal-event-img-height-value: 450; 
-$cal-event-date-font-family: $base-font-sans-serif2;
+$cal-event-date-font-family: var(--font-sans-serif2);
 $cal-event-date-font-size: 1.6rem;
 $cal-event-date-font-weight: 400;
 $cal-event-date-letter-spacing: 0;
-$cal-event-title-font-family: $base-font-sans-serif2;
+$cal-event-title-font-family: var(--font-sans-serif2);
 $cal-event-title-font-size: 2.4rem;
 $cal-event-title-font-weight: 700;
 $cal-event-title-letter-spacing: 0;
-$cal-event-title-default-color: $white;
-$cal-event-title-hover-color: $white;
+$cal-event-title-default-color: var(--color-white);
+$cal-event-title-hover-color: var(--color-white);
 $cal-event-title-line-height: 1.42;
-$cal-event-cta-icon-default-color: $color-secondary;
+$cal-event-cta-icon-default-color: var(--color-secondary);
 $cal-event-cta-icon-hover-color: $cal-event-cta-icon-default-color;
 
-$filter-buttons-font-family: $base-font-sans-serif;
+$filter-buttons-font-family: var(--font-sans-serif);
 $filter-buttons-font-size: 1.6rem;
 $filter-buttons-text-transform: none;
 $filter-buttons-letter-spacing: 0;
-$filter-buttons-color: #555;
+$filter-buttons-color: var(--color-tertiary);
 $filter-buttons-font-weight: 400;
-$filter-buttons-active-color: #018922;
+$filter-buttons-active-color: var(--color-primary);
 $filter-buttons-active-text-decoration: underline;
 $filter-buttons-active-font-weight: 700;
-$filter-buttons-background-color: #fff;
+$filter-buttons-background-color: var(--color-white);
 $filter-button-group-border-radius: 5px;
 $filter-button-group-padding: 20px 50px;
 
@@ -113,7 +113,7 @@ $filter-button-group-padding: 20px 50px;
             .event-date {
                 color: $white;
                 font-family: $cal-event-date-font-family;
-                font-size: $cal-event-date-font-size;
+                @include font-size($cal-event-date-font-size);
                 font-weight: $cal-event-date-font-weight;
                 letter-spacing: $cal-event-date-letter-spacing;
                 line-height: 1;
@@ -123,7 +123,7 @@ $filter-button-group-padding: 20px 50px;
             }
             .event-title {
                 font-family: $cal-event-title-font-family;
-                font-size: $cal-event-title-font-size;
+                @include font-size($cal-event-title-font-size);
                 font-weight: $cal-event-title-font-weight;
                 letter-spacing: $cal-event-title-letter-spacing;
                 color: $cal-event-title-default-color;
@@ -238,8 +238,8 @@ $filter-button-group-padding: 20px 50px;
         }
         .button { 
             display: inline-block; 
-            font-family: $filter-buttons-font-family; 
-            font-size: $filter-buttons-font-size; 
+            font-family: $filter-buttons-font-family;
+            @include font-size($filter-buttons-font-size);
             margin: 0 17px 0 0; 
             font-weight: $filter-buttons-font-weight; 
             letter-spacing: $filter-buttons-letter-spacing;

@@ -136,16 +136,16 @@ $cards-stack-max-breakpoint: 991px;
                     padding: 3rem 2rem;
                 }
                 h2 {
-                    color: $color-secondary;
+                    color: var(--color-secondary);
                 }
                 span[class*="icon"] {
-                    color: $color-tertiary;
+                    color: var(--color-tertiary);
                     font-size: 5rem;
                     margin-left: 0;
                     margin-bottom: 2rem;
                 }
                 > a, p > a:last-child {
-                    color: #018922;
+                    color: var(--color-primary);
                     text-decoration: none;
                     &:hover {
                         text-decoration: underline;

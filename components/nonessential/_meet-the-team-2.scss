@@ -6,23 +6,23 @@ $cards-stack-max-breakpoint: 991px;
 $card-caption-bottom-border: none;
 
 
-$name-font-family: $base-font-sans-serif;
+$name-font-family: var(--font-sans-serif);
 $name-font-size: 2.1rem;
-$name-font-color: #434a59;
+$name-font-color: var(--color-secondary);
 $name-font-weight: 700;
 
 $job-title-font-size: 1.4rem;
-$job-title-font-color: #555;
+$job-title-font-color: var(--color-tertiary);
 $job-title-font-weight: 400;
 
 
-$card-caption-default-font-color: #018922;
-$phone-mail-link-color: #018922;
+$card-caption-default-font-color: var(--color-primary);
+$phone-mail-link-color: var(--color-primary);
 $phone-mail-link-size: 1.6rem;
 
 
 // CARDS STAFF BIOS v2 
-.card-deck.meet-the-team-2 {
+.card-group.meet-the-team-2-prem {
     //margin-left: 15px;
     //margin-right: 15px;
     justify-content: center;
@@ -130,7 +130,7 @@ $phone-mail-link-size: 1.6rem;
             align-items: center;
             strong {
                 font-family: $name-font-family;
-                font-size: $name-font-size;
+                @include font-size($name-font-size);
                 color: $name-font-color;
                 line-height: 1.14;
                 font-weight: $name-font-weight;
@@ -138,7 +138,7 @@ $phone-mail-link-size: 1.6rem;
             em {
                 font-weight: $job-title-font-weight;
                 line-height: 1.333;
-                font-size: $job-title-font-size;
+                @include font-size($job-title-font-size);
                 color: $job-title-font-color;
 
             }
@@ -156,7 +156,7 @@ $phone-mail-link-size: 1.6rem;
                 font-size: 2.1rem;
                 font-weight: 400;
                 line-height: 1.2;
-                color: $color-primary;
+                color: var(--color-primary);
                 z-index: 1;
                 position: relative;
                 transition: color 0.3s ease-in-out;
@@ -181,9 +181,9 @@ $phone-mail-link-size: 1.6rem;
                     align-items: center;
                     margin-bottom: 1.2rem;
                     &:hover, &:focus {
-                        color: $color-secondary;
+                        color: var(--color-secondary);
                         span[class*="icon"] {
-                            color: $color-secondary;
+                            color: var(--color-secondary);
                         }
                     }
                     &:last-child {
@@ -192,7 +192,7 @@ $phone-mail-link-size: 1.6rem;
                 }
                 span[class*="icon"] {
                    color: $phone-mail-link-color;
-                   font-size: $phone-mail-link-size;
+                   @include font-size($phone-mail-link-size);
                     margin-right: 15px;
                     transition: color 0.3s ease-in-out;
                 }
@@ -207,7 +207,7 @@ $phone-mail-link-size: 1.6rem;
                 flex-direction: column;
                 flex: 1;
                 .clickToEditDiv {
-                    border-color: $color-darkest;
+                    border-color: var(--color-darkest);
                     border-style: solid;
                     border-width: 1px 0;
                     padding: 0.5rem 1rem !important;

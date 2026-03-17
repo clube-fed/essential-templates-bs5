@@ -1,29 +1,29 @@
 /* Tabs Styles If Different From Default */
 $tabs-font-size: 1.2rem;
-$tsContent-bg-color: $white;
+$tsContent-bg-color: var(--color-white);
 $tab-selected-font-color: $tabstrip-selected-font-color;
 $tab-selected-bg-color: $tabstrip-selected-bg;
 
 $hole-media-width: 850px;
 
 /* Hole Number Title Font */
-$hole-font-color: $color-secondary;
+$hole-font-color: var(--color-secondary);
 $hole-number-font-size: 3.0rem;
-$hole-number-font-family: $base-font-sans-serif;
+$hole-number-font-family: var(--font-sans-serif);
 $hole-number-text-transform: none;
 $hole-number-letter-spacing: 0;
 
 /* Par Handicap Font Styles */
 
-$par-handicap-font-family: $base-font-sans-serif;
-$par-handicap-color: #555;
+$par-handicap-font-family: var(--font-sans-serif);
+$par-handicap-color: var(--color-tertiary);
 $par-handicap-font-size: 1.6rem;
 
 
 /* Hole Description Text */
 $hole-description-font-size: 1.6rem;
 $hole-description-font-weight: 700;
-$hole-description-font-color: #293337;
+$hole-description-font-color: var(--color-primary);
 
 /* Tee Colors */
 $tee-color-black: #000;
@@ -101,7 +101,7 @@ $tee-color-gold: #d49341;
                 justify-content: center;
                 align-items: center;
                 > a {
-                    font-size: $tabs-font-size!important;
+                    @include font-size($tabs-font-size !important);
                     border-left: $tabstrip-unselected-top-border!important;
                     border-top: none !important;
                     padding: 5px !important;
@@ -234,7 +234,7 @@ $tee-color-gold: #d49341;
                 }
                 .hole-num {
                     font-family: $hole-number-font-family;
-                    font-size: $hole-number-font-size;
+                    @include font-size($hole-number-font-size);
                     line-height: normal;
                     color: $hole-font-color;
                     letter-spacing: $hole-number-letter-spacing;
@@ -249,7 +249,7 @@ $tee-color-gold: #d49341;
                         margin: 0 10px 0 0;
                         font-family: $par-handicap-font-family;
                         color: $par-handicap-color;
-                        font-size: $par-handicap-font-size;
+                        @include font-size($par-handicap-font-size);
                         font-family: $par-handicap-font-family;
                     }
                 }
@@ -309,7 +309,7 @@ $tee-color-gold: #d49341;
                 }
                 .hole-desc {
                     strong {
-                        font-size: $hole-description-font-size;
+                        @include font-size($hole-description-font-size);
                         font-weight: $hole-description-font-weight;
                         color: $hole-description-font-color;
                     }

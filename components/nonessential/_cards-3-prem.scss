@@ -7,9 +7,9 @@ $caption-font-size: 1.6rem;
 $caption-text-transform: uppercase;
 $caption-text-letter-spacing: 2px;
 $caption-text-font-weight: 700;
-$caption-font-family: $base-font-sans-serif;
+$caption-font-family: var(--font-sans-serif);
 
-$arrows-color: #018922;
+$arrows-color: var(--color-primary);
 $arrows-font-size: 3.0rem;
 
 // CARDS v3 GK 
@@ -35,7 +35,7 @@ $arrows-font-size: 3.0rem;
         .slick-prev, .slick-next {
             background: none;
             border: none;
-            font-size: $arrows-font-size;
+            @include font-size($arrows-font-size);
             color: $arrows-color;
             &:focus {
                 outline: none;
@@ -85,7 +85,7 @@ $arrows-font-size: 3.0rem;
             }
         }
     }
-    .card-slide.card-deck.opt1-prem {
+    .card-slide.card-group.opt1-prem {
         padding: 0;
         margin: 0 auto;
         justify-content: center;
@@ -173,7 +173,7 @@ $arrows-font-size: 3.0rem;
                 }
                 .mpContent {
                     font-family: $caption-font-family;
-                    font-size: $caption-font-size;
+                    @include font-size($caption-font-size);
                     text-transform: $caption-text-transform;
                     letter-spacing: $caption-text-letter-spacing;
                     font-weight: $caption-text-font-weight;

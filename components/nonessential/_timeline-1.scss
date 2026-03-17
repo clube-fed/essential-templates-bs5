@@ -1,16 +1,16 @@
 
-$timeline-year-color: #018922;
+$timeline-year-color: var(--color-primary);
 
 $timeline-image-width: 800px;
 
-$year-title-color: $color-secondary;
+$year-title-color: var(--color-secondary);
 $year-title-font-size: 3.0rem;
-$year-title-font-family: $base-font-sans-serif;
+$year-title-font-family: var(--font-sans-serif);
 $year-title-font-weight: 400;
 $year-title-text-transform: none;
  $year-title-letter-spacing: 0;
 
-.timeline-album.opt1 {
+.timeline-album.opt1-prem {
     text-align: center;
     padding: 5rem 1.5rem;
     margin-left: auto;
@@ -28,7 +28,7 @@ $year-title-text-transform: none;
     }
   
 }
-.timeline-album.opt1 .timeline-album-inner {
+.timeline-album.opt1-prem .timeline-album-inner {
     color: $white;
     text-align: left;
     position: relative;
@@ -328,7 +328,7 @@ $year-title-text-transform: none;
         }
         .bw-title-wrap {
             color: $year-title-color;
-            font-size: $year-title-font-size;
+            @include font-size($year-title-font-size);
             font-family: $year-title-font-family;
             font-weight: $year-title-font-weight;
             text-transform: $year-title-text-transform;

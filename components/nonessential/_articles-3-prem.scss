@@ -2,7 +2,7 @@
 
 $article-stack-max-breakpoint: 991px;
 $articles-max-width: 450px;
-$article-arrows-color: #018922;
+$article-arrows-color: var(--color-primary);
 
 // ARTICLES v3 GK Components
 .articles.opt3-prem {
@@ -35,7 +35,7 @@ $article-arrows-color: #018922;
             h5 {
                 font-family: $base-font-sans-serif;
                 font-size: 1.4rem;
-                color: #018922;
+                color: var(--color-primary);
                 font-weight: 400;
                 text-transform: none;
                 letter-spacing: 0;
@@ -66,10 +66,10 @@ $article-arrows-color: #018922;
         }
         a:not(.prev, .next) {
            // @include btn;
-            color: #018922;
+            color: var(--color-primary);
             font-size: 1.6rem;
             background: #fff;
-            border: 1px solid #018922;
+            border: 1px solid var(--color-primary);
             border-radius: 5px;
             padding: 20px 35px;
             font-weight: 400;
@@ -77,7 +77,7 @@ $article-arrows-color: #018922;
             text-transform: none;
             margin-bottom: 70px;
             &:hover {
-                background: #018922;
+                background: var(--color-primary);
                 color: #fff;
             }
             @media(max-width: 667px) {

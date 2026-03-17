@@ -4,19 +4,19 @@ $card-height-value: 270; // omit unit from value
 $cards-stack-max-breakpoint: 991px;
 $card-caption-bottom-border: none;
 
-$name-font-family: $base-font-sans-serif;
+$name-font-family: var(--font-sans-serif);
 $name-font-size: 2.1rem;
-$name-font-color: #434a59;
+$name-font-color: var(--color-secondary);
 $name-font-weight: 700;
 
 $job-title-font-size: 1.4rem;
-$job-title-font-color: #555;
+$job-title-font-color: var(--color-tertiary);
 
-$phone-mail-link-color: #018922;
+$phone-mail-link-color: var(--color-primary);
 $phone-mail-link-size: 1.6rem;
 
 // CARDS STAFF BIOS v3 
-.card-deck.meet-the-team-3 {
+.card-group.meet-the-team-3-prem {
     max-width: 1180px;
     margin: 0 auto;
     justify-content: center;
@@ -77,7 +77,7 @@ $phone-mail-link-size: 1.6rem;
             .mpContent {
                 strong {
                    font-family: $name-font-family;
-                   font-size: $name-font-size;
+                   @include font-size($name-font-size);
                    color: $name-font-color;
                    font-weight: $name-font-weight;
                    line-height: 1.2;
@@ -85,7 +85,7 @@ $phone-mail-link-size: 1.6rem;
                 em {
                     font-weight: 400;
                     color: $job-title-font-color;
-                    font-size: $job-title-font-size;
+                    @include font-size($job-title-font-size);
                     display: inline-block;
                     margin-bottom: 1rem;
                 }
@@ -100,7 +100,7 @@ $phone-mail-link-size: 1.6rem;
                 }                
                 > a {
                     color: $phone-mail-link-color;
-                    font-size: $phone-mail-link-size;
+                    @include font-size($phone-mail-link-size);
                     display: flex;
                     align-items: center;
                     text-decoration: none;
@@ -116,10 +116,10 @@ $phone-mail-link-size: 1.6rem;
                         margin-bottom: 0;
                     }
                     &:hover, &:focus {
-                        color: $color-quaternary;
+                        color: $color-primary;
                         text-decoration: none;
                         span[class*="icon"] {
-                            color: $color-quaternary;
+                            color: $color-primary;
                         }
                     }
                 }

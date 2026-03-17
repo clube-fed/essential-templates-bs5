@@ -6,18 +6,18 @@ $articles-section-heading-style: h3;
 $article-image-width: 225px;
 $article-image-height: 225px;
 
-$article-title-default-color: $color-secondary;
-$article-title-hover-color: $color-primary;
+$article-title-default-color: var(--color-secondary);
+$article-title-hover-color: var(--color-primary);
 $article-title-hover-text-decoration: none;
-$article-title-font-family: $base-font-sans-serif2;
+$article-title-font-family: var(--font-sans-serif2);
 $article-title-text-transform: none;
 $article-title-letter-spacing: 0;
 $article-title-font-size: 2.4rem;
 $article-title-line-height: 1.2;
 $article-title-font-weight: 400;
 
-$article-postdate-font-family: $base-font-sans-serif;
-$article-postdate-color: #555;
+$article-postdate-font-family: var(--font-sans-serif);
+$article-postdate-color: var(--color-tertiary);
 $article-postdate-text-transform: none;
 $article-postdate-letter-spacing: 0;
 $article-postdate-font-size: 1.3rem;
@@ -74,7 +74,7 @@ $article-postdate-font-weight: 400;
                      padding: 1.5rem 2.5rem;
                 }
                 h3 {
-                    font-size: $article-title-font-size;
+                    @include font-size($article-title-font-size);
                     font-family: $article-title-font-family;
                     line-height: $article-title-line-height;
                     font-weight: $article-title-font-weight;
@@ -98,7 +98,7 @@ $article-postdate-font-weight: 400;
             .article-date {
                 font-family: $article-postdate-font-family;
                 text-transform: $article-postdate-text-transform;
-                font-size: $article-postdate-font-size;
+                @include font-size($article-postdate-font-size);
                 font-weight: $article-postdate-font-weight;
                 letter-spacing: $article-postdate-letter-spacing;
                 color: $article-postdate-color;

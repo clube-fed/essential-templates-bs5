@@ -2,20 +2,20 @@
 $cal-events-stack-max-breakpoint: 991px;
 $cal-event-img-width-value: 870; // omit unit from value
 $cal-event-img-height-value: 500; // omit unit from value
-$cal-event-date-font-family: $base-font-sans-serif2;
-$cal-event-date-font-color: $white;
+$cal-event-date-font-family: var(--font-sans-serif2);
+$cal-event-date-font-color: var(--color-white);
 $cal-event-date-font-size: 1.4rem;
 $cal-event-date-font-weight: 800;
 $cal-event-date-letter-spacing: .2rem;
 $cal-event-date-text-transform: uppercase;
-$cal-event-title-font-family: $base-font-sans-serif2;
+$cal-event-title-font-family: var(--font-sans-serif2);
 $cal-event-title-font-size: 3.6rem;
 $cal-event-title-font-weight: 400;
 $cal-event-title-letter-spacing: 0;
-$cal-event-title-default-color: $color-secondary;
-$cal-event-title-hover-color: $color-secondary;
+$cal-event-title-default-color: var(--color-secondary);
+$cal-event-title-hover-color: var(--color-secondary);
 $cal-event-title-line-height: 1.42;
-$cal-event-cta-icon-default-color: #018922;
+$cal-event-cta-icon-default-color: var(--color-primary);
 $cal-event-cta-icon-hover-color: $cal-event-cta-icon-default-color;
 
 // CALENDAR PLUGIN v3
@@ -84,7 +84,7 @@ $cal-event-cta-icon-hover-color: $cal-event-cta-icon-default-color;
          .event-date {
            color: $cal-event-date-font-color;
            font-family: $cal-event-date-font-family;
-           font-size: $cal-event-date-font-size;
+           @include font-size($cal-event-date-font-size);
            font-weight: $cal-event-date-font-weight;
            text-transform: $cal-event-date-text-transform;
            letter-spacing: $cal-event-date-letter-spacing;
@@ -146,7 +146,7 @@ $cal-event-cta-icon-hover-color: $cal-event-cta-icon-default-color;
        .cal-title {
             display: block;
             font-family: $cal-event-title-font-family;
-            font-size: $cal-event-title-font-size;
+            @include font-size($cal-event-title-font-size);
             color: $cal-event-title-default-color;
             font-style: normal;
             font-weight: $cal-event-title-font-weight;

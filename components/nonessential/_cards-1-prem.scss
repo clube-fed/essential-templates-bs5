@@ -4,10 +4,10 @@ $card-height-value: 600; // omit unit from value
 $cards-stack-max-breakpoint: 991px;
 
 $caption-font-size: 3.0rem;
-$caption-font-family: $base-font-sans-serif;
+$caption-font-family: var(--font-sans-serif);
 
 // CARDS v1 
-.card-deck.opt1-prem {
+.card-group.opt1-prem {
     max-width: 1600px;
     padding: 50px 0;
     margin: 0 auto;
@@ -102,7 +102,7 @@ $caption-font-family: $base-font-sans-serif;
             }
             .mpContent {
                 font-family: $caption-font-family;
-                font-size: $caption-font-size;
+                @include font-size($caption-font-size);
                 margin-bottom: 0;
                 line-height: 1.2;
                 color: $white;
