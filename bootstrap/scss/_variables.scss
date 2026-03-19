@@ -518,6 +518,7 @@ $container-max-widths: (
 
 $grid-columns:                12 !default;
 $grid-gutter-width:           2.4rem !default;
+$grid-gutter-half-width:      $grid-gutter-width / 2 !default;
 $grid-row-columns:            12 !default;
 
 // Container padding
