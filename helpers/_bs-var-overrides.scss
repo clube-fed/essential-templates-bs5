@@ -5,6 +5,7 @@
 // $enable-cssgrid: true;
 // $font-size-root: 10px;
 $border-color: #e4e4e4;
+$grid-gutter-half-width: $grid-gutter-width / 2;
 $aspect-ratios: (
   "1x1": 100%,
   "4x3": calc(3 / 4 * 100%),
