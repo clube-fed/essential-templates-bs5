@@ -10,8 +10,7 @@
         background-size: cover;
         background-position: center;
         background-color: $color-darkest;
-        position: relative;
-        overflow: hidden;
+        position: relative;        
         z-index: 1;
         font-size: 0;
         .mpContent {
@@ -27,6 +26,7 @@
             }
         }
         &:not(.empty-banner) {
+            overflow: hidden;
             > .clickToEditDiv {
                 margin-top: -22px !important;
                 position: relative;
@@ -38,7 +38,7 @@
             height: auto;
         }
     }
-    &.private .banner {
+    &.private .banner:not(.empty-banner) {
         max-height: $priv-content-banner-max-height;
         height: px-to-vw($priv-content-banner-max-height);
     }
