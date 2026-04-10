@@ -138,3 +138,11 @@ html._Telerik_IE9, html._Telerik_IE9 body {
 table[id*="_dpEditor"] {
     border-collapse: separate;
 }
+
+table[id$="_tblDataCells"] {
+    thead, tbody, tfoot, tr, td, th {
+        border-color: inherit;
+        border-style: inherit;
+        border-width: inherit;
+    }
+}
