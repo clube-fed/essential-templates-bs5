@@ -25,7 +25,7 @@
     background-image: none;
     border: $button-border;
     border-radius: $button-border-radius;
-    padding: $button-padding;
+    @include padding($button-padding);
     &:hover, &:focus, &:active {
         background-color: $button-bg-hover;
         border-color: $button-border-hover-color;
@@ -48,7 +48,7 @@
     background-color: $second-button-bg;
     border: $second-button-border;
     border-radius: $second-button-border-radius;
-    padding: $second-button-padding;
+    @include padding($second-button-padding);
     &:hover, &:focus, &:active {
         background-color: $second-button-bg-hover;
         border-color: $second-button-border-hover-color;
@@ -67,7 +67,7 @@
     background-color: $third-button-bg;
     border: $third-button-border;
     border-radius: $third-button-border-radius;
-    padding: $third-button-padding;
+    @include padding($third-button-padding);
     &:hover, &:focus, &:active {
         background-color: $third-button-bg-hover;
         border-color: $third-button-border-hover-color;
