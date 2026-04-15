@@ -62,8 +62,8 @@ $link-bottom-border: 1px solid;
 // primary button
 $button-bg: var(--color-secondary);
 $button-bg-hover: color-mix(in srgb, black 10%, $button-bg);
-$button-font-color: $white;
-$button-font-hover-color: $white;
+$button-font-color: var(--color-white);
+$button-font-hover-color: var(--color-white);
 $button-font: var(--font-sans-serif);
 $button-weight: 700;
 $button-font-size: 1.4rem;
@@ -75,10 +75,10 @@ $button-border-hover-color: $button-bg-hover;
 $button-border-radius: 0;
 
 // secondary button
-$second-button-bg: $white;
+$second-button-bg: var(--color-white);
 $second-button-bg-hover: var(--color-primary);
 $second-button-font-color: var(--color-secondary);
-$second-button-font-hover-color: $white;
+$second-button-font-hover-color: var(--color-white);
 $second-button-font: $button-font;
 $second-button-weight: $button-weight;
 $second-button-font-size: $button-font-size;
@@ -90,10 +90,10 @@ $second-button-border-hover-color: $second-button-bg-hover;
 $second-button-border-radius: 0;
 
 // tertiary button
-$third-button-bg: $white;
+$third-button-bg: var(--color-white);
 $third-button-bg-hover: var(--color-secondary);
 $third-button-font-color: var(--color-secondary);
-$third-button-font-hover-color: $white;
+$third-button-font-hover-color: var(--color-white);
 $third-button-font: $button-font;
 $third-button-weight: $button-weight;
 $third-button-font-size: $button-font-size;
@@ -105,12 +105,12 @@ $third-button-border-hover-color: $third-button-bg-hover;
 $third-button-border-radius: 0;
 
 // accordion
-$accordion-bar-closed-bg: $white;
+$accordion-bar-closed-bg: var(--color-white);
 $accordion-bar-open-bg: var(--color-primary);
 $accordion-bar-closed-border: 2px solid $accordion-bar-open-bg;
 $accordion-bar-open-border: 2px solid $accordion-bar-open-bg;
 $accordion-bar-closed-font-color: var(--color-primary);
-$accordion-bar-open-font-color: $white;
+$accordion-bar-open-font-color: var(--color-white);
 $accordion-bar-font-size: 2.4rem;
 $accordion-bar-line-height: 1.25;
 $accordion-bar-font-weight: 300;
@@ -130,7 +130,7 @@ $accordion-content-border: 1px solid var(--color-lightest);
 // tab strip
 $tabstrip-unselected-bg: var(--color-primary);
 $tabstrip-selected-bg: var(--color-lightest);
-$tabstrip-unselected-font-color: $white;
+$tabstrip-unselected-font-color: var(--color-white);
 $tabstrip-selected-font-color: var(--color-primary);
 $tabstrip-unselected-top-border: 3px solid $tabstrip-unselected-bg;
 $tabstrip-selected-top-border-color: var(--color-primary);
@@ -145,7 +145,7 @@ $tabstrip-content-bg-color: var(--color-lightest);
 $tabstrip-content-border: 1px solid var(--color-lightest);
 
 // top nav
-$mobile-header-bg-color: $white;
+$mobile-header-bg-color: var(--color-white);
 $nav-top-li-left-right-padding: 2rem !default;
 
 // subnav -- see mixin for subnav font styling
@@ -153,8 +153,8 @@ $subnav-min-width: 260px;
 $subnav-top-bott-padding: 2.3rem;
 $subnav-left-right-padding: 0;
 $subnav-padding: $subnav-top-bott-padding $subnav-left-right-padding calc(#{$subnav-top-bott-padding} - 0px);
-$nav-sub-default-font-color: $white;
-$nav-sub-hover-font-color: $white;
+$nav-sub-default-font-color: var(--color-white);
+$nav-sub-hover-font-color: var(--color-white);
 $nav-sub-selected-font-color: $nav-sub-hover-font-color;
 $nav-sub-font-top-bott-padding: 0.8rem;
 $nav-sub-font-left-right-padding: 3rem;
