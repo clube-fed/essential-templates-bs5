@@ -114,6 +114,11 @@
                         &:before {
                             display: none !important;
                         }
+                        &:focus {
+                            body:not(.user-is-tabbing) & {
+                                outline: none;
+                            }
+                        }
                         &.selected {
                             background: $tabstrip-selected-bg !important;
                             border-color: $tabstrip-selected-top-border-color !important;
