@@ -156,13 +156,13 @@ $login-forgot-pw-hover-text-decor: none;
                 margin-bottom: 20px;
                 background: $button-bg;
                 font-family: $button-font;
-                text-transform: uppercase;
+                text-transform: $button-text-transform;
                 color: $button-font-color;
                 font-size: $button-font-size;
                 font-weight: $button-weight !important;
                 letter-spacing: $button-letter-spacing;
                 //line-height: 44px;
-                border-radius: 0;
+                border-radius: $button-border-radius;
                 padding: $button-padding !important;
                 outline: 0;
                 border: $button-border !important;
@@ -173,7 +173,7 @@ $login-forgot-pw-hover-text-decor: none;
                 transition: all .3s ease-in-out;
                 &:hover,&:focus {
                     background-color: $button-bg-hover;
-                    color: $white;
+                    color: $button-font-hover-color;
                     border-color: $button-border-hover-color !important;
                 }
                 &.abut {
