@@ -271,3 +271,5 @@ table.row {
         margin: 0 auto;
     }
 }
+
+table[id$="_tblDataCells"] {thead, tbody, tfoot, tr, td, th {border-color: inherit;border-style: inherit;border-width: inherit;}}
