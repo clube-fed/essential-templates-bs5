@@ -1429,6 +1429,157 @@ $j( '.card-group.meet-the-team-3-prem .card' ).each( function(){
 /******************* 
 End Meet The Team v3 
 ******************/
+
+
+/******************* 
+Club Calendar GK Component v1
+******************/
+$j('.club-calendar.opt1-prem [id$="EventsWrapper"]').each(function(){
+    $j('.event-wrap:first-of-type').unwrap();
+ 
+});
+
+$j('.club-calendar.opt1-prem [id$="EventsWrapper"]').each(function(){
+    $j('.event-wrap').unwrap();
+ 
+});
+
+
+$j('.club-calendar.opt1-prem [id$="EventsWrapper"] .event-wrap > a').each(function(){
+    $j('.event-image', this).css('background-image', "url("+ $j('.event-image > img:nth-child(1)', this).attr("src") +")");
+    //var eventTitle = $j('.event-title',this).text();
+    //$j( '.event-image img:first-child', this ).attr('alt',eventTitle);
+    $j( '.event-image img', this ).attr('alt','');
+    $j( '.event-image img + img', this ).attr('aria-hidden','true').attr('alt','');
+});
+
+/******************* 
+End Club Calendar GK Component v1
+******************/
+
+/******************* 
+Club Calendar GK Component v2
+******************/
+
+$j('.club-calendar.opt2-prem [id$="EventsWrapper"]').each(function(){
+$j('.event-link:first-of-type').unwrap();
+
+});
+
+/*
+$j('.club-calendar.opt2-prem [id$="EventsWrapper"] > div').each(function(){
+    $j(this).contents().unwrap();
+});
+*/
+
+$j('.club-calendar.opt2-prem [id$="EventsWrapper"] > a').each(function(){
+    $j('.event-image', this).css('background-image', "url("+ $j('.event-image img', this).attr("src") +")");
+    //var eventTitle = $j('.event-title',this).text();
+    //$j( '.event-image img:first-child', this ).attr('alt',eventTitle);
+    $j( '.event-image img', this ).attr('alt','');
+    $j( '.event-image img + img', this ).attr('aria-hidden','true').attr('alt','');
+});
+
+/******************* 
+End Club Calendar GK Component v2
+******************/
+
+/******************* 
+Calendar GK Component v4
+******************/
+
+$j('.club-calendar.opt4-prem [id$="EventsWrapper"]').each(function(){
+    $j(this).unwrap();
+ 
+});
+
+$j('.club-calendar.opt4-prem [id$="EventsWrapper"] .event-info').each(function(){
+    $j('.event-wrap:first-of-type').unwrap();
+ 
+});
+
+$j('club-calendar.opt4-prem .event-image .mpContent:first-child').each(function () {
+    $j(this).css('background-image', "url(" + $j('img', this).attr("src") + ")");
+});
+
+/******************* 
+End Calendar GK Component v4
+******************/
+
+/******************* 
+Calendar GK Component v5
+******************/
+
+$j('.club-calendar.opt5-prem [id$="EventsWrapper"] .event-link').each(function(){
+    $j(this).unwrap();
+ 
+});
+
+
+$j('.club-calendar.opt5-prem .event-link .event-image').each(function () {
+    $j(this).css('background-image', "url(" + $j('img:nth-child(1)', this).attr("src") + ")");
+});
+
+/******************* 
+End Calendar GK Component v5
+******************/
+
+/******************* 
+Articles GK Components
+******************/
+
+//articles opt 3 - GK Components
+
+$j('.articles.opt3-prem .newsItem').each(function () {
+    var articleImageLinkURL = $j('.article-image-link-url', this).text();
+    var articleSubject = $j('.article-subject', this).text();
+    $j('.article-image', this).css('background-image', "url(" + $j('.article-image img', this).first().attr("src") + ")");
+    $j('.article-image img', this).first().attr('alt', articleSubject);
+    $j('.article-image img + img', this).attr('aria-hidden', 'true').attr('alt', '');
+    if($j.trim($j('.article-image-link-url',this).html()).length) { 
+        //$j('.article-wrap', this).addClass('empty-banner');
+        $j('.article-wrap', this).attr( "href", articleImageLinkURL);
+        $j('.article-wrap:not([href*="ceclients"]):not([href*="westwoodcountryclub.com"])', this).attr( "target", '_blank');
+        $j('.article-wrap[href*=".pdf"]', this).attr( "target", '_blank');
+    }
+});
+
+//articles opt 5 - GK Components
+
+$j('.articles.opt5-prem div[id$="ArticlesWrapper"]').each(function(){
+    $j(this).unwrap();
+ 
+});
+
+$j('.articles.opt5-prem div[id$="ArticlesWrapper"] .newsItem').each(function(){
+    $j(this).unwrap();
+ 
+});
+
+$j('.articles.opt5-prem .article-image').each(function(){
+    $j(this).unwrap();
+ 
+});
+
+//articles option 6 - GK Components
+
+$j('.articles.opt6-prem .card').each(function () {
+    //$j('.card-text .mpContent > a', this).append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
+    if (!$j.trim($j('.mpContent', this).html()).length) {
+        $j(this).addClass('has-empty-column');
+    }
+    $j(this).find('.card-bg-img .mpContent').css('background-image', "url(" + $j(this).find('.card-bg-img .mpContent img').attr("src") + ")");
+    $j(this).find('.card-bg-img .mpContent img').wrap("<span style='opacity:0;'></span>");
+    var calloutTitle = $j.trim($j('.card-text .mpContent > *:first-child', this).text());
+    var ImageAltText = "" + calloutTitle;
+    var altAttr = $j('.card-bg-img .mpContent img', this).attr('alt');
+    if (typeof altAttr !== typeof undefined && altAttr !== false) {
+        // Element has alt attribute
+    } else {
+        $j('.card-bg-img .mpContent img', this).attr('alt', ImageAltText);
+    }
+});
+
 //formbase edits
 //$j('.formBaseFormWrapper > div:eq(1)').addClass('formBtn');
 //$j('.formBaseFormWrapper > div:eq(1)').addClass('clearFix');
