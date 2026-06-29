@@ -1154,8 +1154,8 @@ $j('.card-panels.opt3 .card').each(function () {
 });
 
 /* GK Components Callout Cards */
-
-//card opt1
+/*
+//card opt1 prem
 $j('.card-group.opt1-prem .card').each(function () {
     if (!$j.trim($j('.card-img-overlay .mpContent a', this).html()).length) {
         $j(this).addClass('card-no-link');
@@ -1184,7 +1184,7 @@ $j('.card-group.opt1-prem .card').each(function () {
     $j(this).find('.figure-bg-img .mpContent').contents().unwrap();
     $j(this).find('.card-img-overlay .mpContent a').contents().unwrap();
 });
-//cards opt2
+//cards opt2 prem
 
 $j('.card-group.opt2-prem .card').each(function () {
     if (!$j.trim($j('.card-img-overlay .mpContent a', this).html()).length) {
@@ -1215,7 +1215,7 @@ $j('.card-group.opt2-prem .card').each(function () {
     $j(this).find('.card-img-overlay .mpContent a').contents().unwrap();
     //$j(this).find('.card-img-overlay .mpContent').append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
 });
-//card option 3
+//card option 3 prem
 $j('.card-group.opt3-prem .card').each(function () {
     $j('.card-text .mpContent > a:not([class*="abut"])', this).append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
     // Add alt text to images based on callout title
@@ -1229,7 +1229,7 @@ $j('.card-group.opt3-prem .card').each(function () {
     }
 });
 
-//card option 4
+//card option 4 prem
 $j('.card-group.opt4-prem .card').each(function () {
     //$j('.card-text .mpContent > a', this).append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
     if (!$j.trim($j('.mpContent', this).html()).length) {
@@ -1246,7 +1246,7 @@ $j('.card-group.opt4-prem .card').each(function () {
         $j('.card-bg-img .mpContent img', this).attr('alt', ImageAltText);
     }
 });
-//card option 5
+//card option 5 prem
 $j('.card-group.opt5-prem .card').each(function () {
     //$j('.card-text .mpContent > a', this).append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
     if (!$j.trim($j('.mpContent', this).html()).length) {
@@ -1263,7 +1263,7 @@ $j('.card-group.opt5-prem .card').each(function () {
         $j('.card-bg-img .mpContent img', this).attr('alt', ImageAltText);
     }
 });
-//card opt 6
+//card opt 6 prem
 $j('.card-group.opt6-prem .card').each(function () {
     if (!$j.trim($j('.card-img-overlay .mpContent a', this).html()).length) {
         $j(this).addClass('card-no-link');
@@ -1293,6 +1293,62 @@ $j('.card-group.opt6-prem .card').each(function () {
     $j(this).find('.card-img-overlay .mpContent a').contents().unwrap();
     //$j(this).find('.card-img-overlay .mpContent').append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
 });
+*/
+
+/******************* 
+GK Component Crossmarketing panel
+******************/
+/*
+$j( '.crossmarketing-panel-prem' ).each( function(){
+    $j(this).append("<div class='cross-admin'><div class='cross-cte-txt'></div></div>"); 
+    
+    if ($j(this).find('> .mpContent').length) {
+      $j(this).addClass('has-bg-img');
+      $j('.cross-admin',this).append("<div class='cross-cte-img'></div>");
+      var mainImgSrc = $j(this).find('> .mpContent').children('img').attr("src");
+    $j('> .mpContent',this).css('background-image', "url("+ mainImgSrc +")");
+    var calloutTitle = $j.trim($j('.cross-img-overlay .mpContent',this).text());
+    var ImageAltText = "" + calloutTitle;
+    var altAttr = $j('> .mpContent img',this).attr('alt');
+    if (typeof altAttr !== typeof undefined && altAttr !== false) {
+      // Element has alt attribute
+    }else {
+        $j('> .mpContent img',this).attr('alt',ImageAltText);
+    }
+    var imgCte = $j(this).children('.clickToEditDiv').detach();
+    $j(this).find('.cross-admin .cross-cte-img').append(imgCte);
+    }
+    if ($j(this).find('.section-title').length) {
+      $j(this).addClass('has-section-title');
+      $j('.cross-admin',this).append("<div class='cross-cte-title'></div>");
+      var titleCte = $j('.container .col-12 .section-title', this).children('.clickToEditDiv').detach(); 
+      $j(this).find('.cross-admin .cross-cte-title').append(titleCte);
+  }
+  if ($j(this).find('.section-title').length && !$j.trim($j('.section-title .mpContent', this).html()).length) {
+    $j(this).addClass('empty-section-title');
+};
+    
+    var txtCte = $j('.container .col-12', this).children('.clickToEditDiv').detach();
+    
+    
+    $j(this).find('.cross-admin .cross-cte-txt').append(txtCte);
+    
+    //$j(this).find('.container .mpContent > a').append("<span class='nc-icon-mini arrows-1_small-triangle-right'></span>");
+});
+*/
+
+/******************* 
+End Premiere Crossmarketing panel 
+******************/
+/******************* 
+
+/* Wow Animations Init - uncomment to activate if using */
+
+/*
+wow=new WOW({boxClass:'wow',animateClass:'animated',offset:0,mobile:true,live:true });wow.init();
+new WOW().init();
+*/
+
 
 /* End Component Cards */
 
