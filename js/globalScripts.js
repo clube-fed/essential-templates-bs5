@@ -1153,6 +1153,149 @@ $j('.card-panels.opt3 .card').each(function () {
     }
 });
 
+/* GK Components Callout Cards */
+
+//card opt1
+$j('.card-group.opt1-prem .card').each(function () {
+    if (!$j.trim($j('.card-img-overlay .mpContent a', this).html()).length) {
+        $j(this).addClass('card-no-link');
+    };
+    var callout_href = $j('.card-img-overlay .mpContent a', this).attr("href");
+    var callout_target = $j('.card-img-overlay .mpContent a', this).attr("target");
+    var outerCalloutAnchor = $j("<a class='card-link-wrap'></a>").attr("href", callout_href).attr("target", callout_target);
+    $j(this).wrapInner(outerCalloutAnchor);
+    $j(this).append("<div class='card-admin'><div class='card-cte-img'></div><div class='card-cte-txt'></div></div>");
+    $j(this).find('.card-bg-img').css('background-image', "url(" + $j(this).find('.card-bg-img .mpContent img').attr("src") + ")");
+    var calloutTitle = $j.trim($j('.card-img-overlay .mpContent', this).text());
+    var ImageAltText = "" + calloutTitle;
+    var altAttr = $j('.card-bg-img .mpContent img', this).attr('alt');
+    if (typeof altAttr !== typeof undefined && altAttr !== false) {
+        // Element has alt attribute
+    } else {
+        $j('.card-bg-img .mpContent img', this).attr('alt', ImageAltText);
+    }
+    if (!$j.trim($j('.card-bg-img .mpContent', this).html()).length) {
+        $j(this).addClass('emptyCard');
+    };
+    var imgCte = $j('.card-bg-img', this).children('.clickToEditDiv').detach();
+    var txtCte = $j('.card-img-overlay', this).children('.clickToEditDiv').detach();
+    $j(this).find('.card-admin .card-cte-img').append(imgCte);
+    $j(this).find('.card-admin .card-cte-txt').append(txtCte);
+    $j(this).find('.figure-bg-img .mpContent').contents().unwrap();
+    $j(this).find('.card-img-overlay .mpContent a').contents().unwrap();
+});
+//cards opt2
+
+$j('.card-group.opt2-prem .card').each(function () {
+    if (!$j.trim($j('.card-img-overlay .mpContent a', this).html()).length) {
+        $j(this).addClass('card-no-link');
+    };
+    var callout_href = $j('.card-img-overlay .mpContent a', this).attr("href");
+    var callout_target = $j('.card-img-overlay .mpContent a', this).attr("target");
+    var outerCalloutAnchor = $j("<a class='card-link-wrap'></a>").attr("href", callout_href).attr("target", callout_target);
+    $j(this).wrapInner(outerCalloutAnchor);
+    $j(this).append("<div class='card-admin'><div class='card-cte-img'></div><div class='card-cte-txt'></div></div>");
+    $j(this).find('.card-bg-img').css('background-image', "url(" + $j(this).find('.card-bg-img .mpContent img').attr("src") + ")");
+    var calloutTitle = $j.trim($j('.card-img-overlay .mpContent', this).text());
+    var ImageAltText = "" + calloutTitle;
+    var altAttr = $j('.card-bg-img .mpContent img', this).attr('alt');
+    if (typeof altAttr !== typeof undefined && altAttr !== false) {
+        // Element has alt attribute
+    } else {
+        $j('.card-bg-img .mpContent img', this).attr('alt', ImageAltText);
+    }
+    if (!$j.trim($j('.card-bg-img .mpContent', this).html()).length) {
+        $j(this).addClass('emptyCard');
+    };
+    var imgCte = $j('.card-bg-img', this).children('.clickToEditDiv').detach();
+    var txtCte = $j('.card-img-overlay', this).children('.clickToEditDiv').detach();
+    $j(this).find('.card-admin .card-cte-img').append(imgCte);
+    $j(this).find('.card-admin .card-cte-txt').append(txtCte);
+    $j(this).find('.figure-bg-img .mpContent').contents().unwrap();
+    $j(this).find('.card-img-overlay .mpContent a').contents().unwrap();
+    //$j(this).find('.card-img-overlay .mpContent').append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
+});
+//card option 3
+$j('.card-group.opt3-prem .card').each(function () {
+    $j('.card-text .mpContent > a:not([class*="abut"])', this).append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
+    // Add alt text to images based on callout title
+    var calloutTitle = $j.trim($j('.card-text .mpContent > *:first-child', this).text());
+    var ImageAltText = "" + calloutTitle;
+    var altAttr = $j('.card-img .mpContent img', this).attr('alt');
+    if (altAttr) {
+        // Element has alt attribute
+    } else {
+        $j('.card-img .mpContent img', this).attr('alt', ImageAltText);
+    }
+});
+
+//card option 4
+$j('.card-group.opt4-prem .card').each(function () {
+    //$j('.card-text .mpContent > a', this).append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
+    if (!$j.trim($j('.mpContent', this).html()).length) {
+        $j(this).addClass('has-empty-column');
+    }
+    $j(this).find('.card-bg-img .mpContent').css('background-image', "url(" + $j(this).find('.card-bg-img .mpContent img').attr("src") + ")");
+    $j(this).find('.card-bg-img .mpContent img').wrap("<span style='opacity:0;'></span>");
+    var calloutTitle = $j.trim($j('.card-text .mpContent > *:first-child', this).text());
+    var ImageAltText = "" + calloutTitle;
+    var altAttr = $j('.card-bg-img .mpContent img', this).attr('alt');
+    if (typeof altAttr !== typeof undefined && altAttr !== false) {
+        // Element has alt attribute
+    } else {
+        $j('.card-bg-img .mpContent img', this).attr('alt', ImageAltText);
+    }
+});
+//card option 5
+$j('.card-group.opt5-prem .card').each(function () {
+    //$j('.card-text .mpContent > a', this).append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
+    if (!$j.trim($j('.mpContent', this).html()).length) {
+        $j(this).addClass('has-empty-column');
+    }
+    $j(this).find('.card-bg-img .mpContent').css('background-image', "url(" + $j(this).find('.card-bg-img .mpContent img').attr("src") + ")");
+    $j(this).find('.card-bg-img .mpContent img').wrap("<span style='opacity:0;'></span>");
+    var calloutTitle = $j.trim($j('.card-text .mpContent > *:first-child', this).text());
+    var ImageAltText = "" + calloutTitle;
+    var altAttr = $j('.card-bg-img .mpContent img', this).attr('alt');
+    if (typeof altAttr !== typeof undefined && altAttr !== false) {
+        // Element has alt attribute
+    } else {
+        $j('.card-bg-img .mpContent img', this).attr('alt', ImageAltText);
+    }
+});
+//card opt 6
+$j('.card-group.opt6-prem .card').each(function () {
+    if (!$j.trim($j('.card-img-overlay .mpContent a', this).html()).length) {
+        $j(this).addClass('card-no-link');
+    };
+    var callout_href = $j('.card-img-overlay .mpContent a', this).attr("href");
+    var callout_target = $j('.card-img-overlay .mpContent a', this).attr("target");
+    var outerCalloutAnchor = $j("<a class='card-link-wrap'></a>").attr("href", callout_href).attr("target", callout_target);
+    $j(this).wrapInner(outerCalloutAnchor);
+    $j(this).append("<div class='card-admin'><div class='card-cte-img'></div><div class='card-cte-txt'></div></div>");
+    $j(this).find('.card-bg-img').css('background-image', "url(" + $j(this).find('.card-bg-img .mpContent img').attr("src") + ")");
+    var calloutTitle = $j.trim($j('.card-img-overlay .mpContent', this).text());
+    var ImageAltText = "" + calloutTitle;
+    var altAttr = $j('.card-bg-img .mpContent img', this).attr('alt');
+    if (typeof altAttr !== typeof undefined && altAttr !== false) {
+        // Element has alt attribute
+    } else {
+        $j('.card-bg-img .mpContent img', this).attr('alt', ImageAltText);
+    }
+    if (!$j.trim($j('.card-bg-img .mpContent', this).html()).length) {
+        $j(this).addClass('emptyCard');
+    };
+    var imgCte = $j('.card-bg-img', this).children('.clickToEditDiv').detach();
+    var txtCte = $j('.card-img-overlay', this).children('.clickToEditDiv').detach();
+    $j(this).find('.card-admin .card-cte-img').append(imgCte);
+    $j(this).find('.card-admin .card-cte-txt').append(txtCte);
+    $j(this).find('.figure-bg-img .mpContent').contents().unwrap();
+    $j(this).find('.card-img-overlay .mpContent a').contents().unwrap();
+    //$j(this).find('.card-img-overlay .mpContent').append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
+});
+
+/* End Component Cards */
+
 //formbase edits
 //$j('.formBaseFormWrapper > div:eq(1)').addClass('formBtn');
 //$j('.formBaseFormWrapper > div:eq(1)').addClass('clearFix');
