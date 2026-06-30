@@ -14,5 +14,5 @@ $j('.quick-links.opt2 > .mpContent').each(function () {
 });
 
 $j('.quick-links.opt2').each(function () {
-  $j('li>a', this).append('<span class="quick-link-arrow nc-icon-mini arrows-1_minimal-right"></span>');
+  // $j('li>a', this).append('<span class="quick-link-arrow nc-icon-mini arrows-1_minimal-right"></span>');
 });
