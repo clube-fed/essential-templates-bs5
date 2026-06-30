@@ -34,10 +34,61 @@ $cal-event-cta-icon-hover-color: $cal-event-cta-icon-default-color;
     .slick-slider:not(.slick-initialized) {
      opacity: 0;
     }
+      .slick-dots {
+        padding-left: 0;
+        margin: 0;
+        z-index: 50;
+        line-height: 0;
+        @media(min-width: 992px) {
+          position: absolute;
+          top: 60vh;
+          right: 70px;
+
+        }
+        @media(max-width: 991px) {
+            position: static;
+            padding-top: 25px;
+            text-align: center;
+        }
+        li {
+          list-style: none;
+          display: inline-block;
+          width: 10px;
+          margin: 0 5px; 
+          button {
+            background: 0;
+            font-size: 0;
+            border: 2px solid $white;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            outline: none;
+            padding: 0;
+            display: block;
+            @media(max-width: 991px) {
+              border: 2px solid var(--color-primary);
+            }
+            &:before {
+              content: '';
+              font-size: 0;
+              }
+            }
+            &.slick-active > button {
+              background: $white;
+               @media(max-width: 991px) {
+                background: var(--color-primary);
+              }
+    
+            }
+        }
+    }
     .event-wrap {
        overflow: hidden;
+       position: relative;
      .image-wrap {
        position: relative;
+       background-size: cover;
+       background-repeat: no-repeat;
        max-width: $cal-event-img-width-value + px;
        height: 100vh;
        max-height: 500px;
@@ -90,7 +141,7 @@ $cal-event-cta-icon-hover-color: $cal-event-cta-icon-default-color;
            letter-spacing: $cal-event-date-letter-spacing;
            
          }
-         .slick-dots {
+          .slick-dots {
             padding-left: 0;
             margin: 0;
             z-index: 50;
@@ -102,33 +153,32 @@ $cal-event-cta-icon-hover-color: $cal-event-cta-icon-default-color;
             @media(max-width: 414px) {
                 padding-top: 5px;
             }
-        li {
-         list-style: none;
-         display: inline-block;
-         width: 10px;
-         margin: 0 5px;
-         button {
-           background: 0;
-           font-size: 0;
-           border: 2px solid $white;
-           width: 10px;
-           height: 10px;
-           border-radius: 50%;
-           outline: none;
-           padding: 0;
-           display: block;
-           &:before {
-             content: '';
-             font-size: 0;
-             }
-           }
-           &.slick-active > button {
-             background: $white;
-   
-            }
-        }
-          
-        }
+            li {
+              list-style: none;
+              display: inline-block;
+              width: 10px;
+              margin: 0 5px;
+              button {
+                background: 0;
+                font-size: 0;
+                border: 2px solid $white;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                outline: none;
+                padding: 0;
+                display: block;
+                &:before {
+                  content: '';
+                  font-size: 0;
+                  }
+                }
+                &.slick-active > button {
+                  background: $white;
+        
+                }
+              }
+          }
       }
 
      }
