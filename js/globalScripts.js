@@ -1154,7 +1154,7 @@ $j('.card-panels.opt3 .card').each(function () {
 });
 
 /* GK Components Callout Cards */
-/*
+
 //card opt1 prem
 $j('.card-group.opt1-prem .card').each(function () {
     if (!$j.trim($j('.card-img-overlay .mpContent a', this).html()).length) {
@@ -1293,7 +1293,7 @@ $j('.card-group.opt6-prem .card').each(function () {
     $j(this).find('.card-img-overlay .mpContent a').contents().unwrap();
     //$j(this).find('.card-img-overlay .mpContent').append("<span class='nc-icon-outline arrows-1_circle-right-37'></span>");
 });
-*/
+
 
 /* End Component Cards */
 
@@ -1579,6 +1579,10 @@ $j('.articles.opt6-prem .card').each(function () {
         $j('.card-bg-img .mpContent img', this).attr('alt', ImageAltText);
     }
 });
+
+/******************* 
+End Articles GK Components
+******************/
 
 //formbase edits
 //$j('.formBaseFormWrapper > div:eq(1)').addClass('formBtn');
