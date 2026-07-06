@@ -4,7 +4,7 @@
 // GLOBAL HEADER MOBILE
 .public, .private {
     header {
-        &.opt1,&.opt2,&.opt3,&.opt4,&.opt5 {
+        &.opt1,&.opt2,&.opt3,&.opt4,&.opt5, &.opt1-prem,&.opt2-prem,&.opt3-prem,&.opt4-prem,&.opt5-prem {
             .abut.mobile {
             @media (min-width:$desktop-nav-min-brkpt) {
               display: none;
