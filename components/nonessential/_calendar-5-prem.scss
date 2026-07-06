@@ -270,7 +270,7 @@ $filter-button-group-padding: 20px 50px;
         transition: 0.3s all ease-in-out;
         top: 0!important;
         &.active {
-            opacity: 1;
+            opacity: 1!important;
         }
         &.not-active {
             z-index: -1;
