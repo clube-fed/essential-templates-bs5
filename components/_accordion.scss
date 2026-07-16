@@ -98,7 +98,7 @@
                 line-height: 1;
                 height: auto;
                 width: auto;
-                font-size: $accordion-icon-size;
+                @include font-size($accordion-icon-size);
                 &:after {
                     content: $accordion-icon-closed;
                     font-family: 'Nucleo Glyph';
