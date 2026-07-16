@@ -61,7 +61,7 @@ $link-bottom-border: 1px solid;
 
 // primary button
 $button-bg: var(--color-secondary);
-$button-bg-hover: color-mix(in srgb, black 10%, $button-bg);
+$button-bg-hover: var(--color-primary);
 $button-font-color: var(--color-white);
 $button-font-hover-color: var(--color-white);
 $button-font: var(--font-sans-serif);
