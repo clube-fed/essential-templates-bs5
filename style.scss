@@ -47,6 +47,7 @@ $rfs-base-value: 1.6rem !default; // font-size minimum
 // HELPERS
 @import 'helpers/variables';
 @import 'helpers/mixins';
+@import 'helpers/css-variables';
 
 // BASE
 @import 'base/reset';
