@@ -9,6 +9,7 @@ $rfs-base-value: 1.6rem !default; // font-size minimum
 @import "bootstrap/scss/mixins";
 /* Mobile */
 @import 'helpers/variables';
+@import 'helpers/css-variables';
 @import 'base/typography';
 html {
 	font-size: calc((#{$root-font-size-without-unit} / 16) * 1em);
