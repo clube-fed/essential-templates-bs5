@@ -10,6 +10,7 @@ $rfs-base-value: 1.6rem !default; // font-size minimum
 // END BOOTSTRAP
 @import 'helpers/variables';
 @import 'helpers/mixins';
+@import 'helpers/css-variables';
 @import 'base/reset';
 @import 'base/typography';
 @import 'components/buttons';
