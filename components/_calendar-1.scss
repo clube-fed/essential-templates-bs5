@@ -30,7 +30,7 @@ $cal-event-title-font-size: 3.6rem;
 $cal-event-title-font-weight: 300;
 $cal-event-title-line-height: 1.22;
 
-$cal-event-cta-link-font-family: var(--base-font-sans-serif);
+$cal-event-cta-link-font-family: var(--font-sans-serif);
 $cal-event-cta-link-default-font-color: var(--color-tertiary);
 $cal-event-cta-link-hover-font-color: var(--color-tertiary);
 $cal-event-cta-link-font-size: 1.6rem;
@@ -40,7 +40,7 @@ $cal-event-cta-link-hover-font-weight: 400;
 
 // CALENDAR PLUGIN v1
 .calendar.opt1 {
-    font-family: var(--base-font-sans-serif);
+    font-family: var(--font-sans-serif);
     // max-width: 1200px;
     margin: 0 auto;
     // padding: 4.1rem 15px 7rem 15px;
