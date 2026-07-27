@@ -563,7 +563,7 @@ ul,ol{
 	line-height: 1.75;
 	font-weight: 400; 
 }
-.table *{
+.table *:not([class*="abut"]){
 	font-family: sans-serif;
 	font-size: 1.6rem;
 	color: #000;
