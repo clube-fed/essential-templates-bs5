@@ -31,17 +31,24 @@ Mobile Web tab
 ------------------------------------------------------------
 Append in <head> above scripts
 ------------------------------------------------------------
-
+<!--[FAVICON HTML HERE]-->
+<!--[FONT LINK HERE]-->
+<link href="https://static.clubessential.com/fonts/glyph/css/nucleo-glyph.css" rel="stylesheet" type="text/css">
+<link href="https://static.clubessential.com/fonts/outline/css/nucleo-outline.css" rel="stylesheet" type="text/css">
+<link href="https://static.clubessential.com/fonts/mini/css/nucleo-mini.css" rel="stylesheet" type="text/css">
+<link href="https://clubessential.s3.amazonaws.com/CEFED/_Axis-Website/Sites/SITEFOLDERNAME/css/style.css" rel="stylesheet" type="text/css">
 
 ------------------------------------------------------------
 Append directly above </head>
 ------------------------------------------------------------
-
+<script src="https://static.clubessential.com/libs/bs5/js/bootstrap.min.js"></script>
 
 ------------------------------------------------------------
 Append directly above </body>
 ------------------------------------------------------------
-
+<script src="https://static.clubessential.com/js/overridePhotoAlbum.min.js"></script>
+<script src="https://static.clubessential.com/js/responsiveAlbum.min.js"></script>
+<script src="https://clubessential.s3.amazonaws.com/CEFED/_Axis-Website/Sites/SITEFOLDERNAME/js/globalScripts.js"></script>
 
 
 ***************
@@ -50,14 +57,22 @@ Other tab
 ------------------------------------------------------------
 Head Tag Top (Top of head tag below meta defaults)
 ------------------------------------------------------------
-
+<!--[FONT LINK HERE]-->
+<link href="https://static.clubessential.com/fonts/glyph/css/nucleo-glyph.css" rel="stylesheet" type="text/css">
+<link href="https://static.clubessential.com/fonts/outline/css/nucleo-outline.css" rel="stylesheet" type="text/css">
+<link href="https://static.clubessential.com/fonts/mini/css/nucleo-mini.css" rel="stylesheet" type="text/css">
+<link href="https://clubessential.s3.amazonaws.com/CEFED/_Axis-Website/Sites/SITEFOLDERNAME/css/generic-app.css" rel="stylesheet" type="text/css">
 
 ------------------------------------------------------------
 Head Tag Bottom (Bottom of head tag below script defaults)
 ------------------------------------------------------------
-
+<!--[FAVICON HTML HERE]-->
+<script src="https://static.clubessential.com/libs/bs5/js/bootstrap.min.js"></script>
+<link href="https://clubessential.s3.amazonaws.com/CEFED/_Axis-Website/Sites/SITEFOLDERNAME/css/style.css" rel="stylesheet" type="text/css">
 
 ------------------------------------------------------------
 Body Tag Bottom (Bottom of body tag below all content)
 ------------------------------------------------------------
-
+<script src="https://static.clubessential.com/js/overridePhotoAlbum.min.js"></script>
+<script src="https://static.clubessential.com/js/responsiveAlbum.min.js"></script>
+<script src="https://clubessential.s3.amazonaws.com/CEFED/_Axis-Website/Sites/SITEFOLDERNAME/js/globalScripts.js"></script>
