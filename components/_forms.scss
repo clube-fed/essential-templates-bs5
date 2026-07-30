@@ -130,7 +130,7 @@ $nohex: str-replace(#{$form-inputs-text-color}, '#', '%23');
                     padding-left: 15px;
                     padding-right: 15px;
                 }
-                &:not([style*="red"]) {
+                &:not([style*="red"]):not([style*="255, 255, 135"]) {
                     background-color: $form-inputs-background-color;
                     border-color: $form-inputs-border-color !important;
                     color: $form-inputs-text-color !important;
