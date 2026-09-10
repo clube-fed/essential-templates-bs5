@@ -12,6 +12,10 @@
     }
 }
 
+@mixin col-gap-formula {
+    flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+}
+
 // mobile navbar-collapse
 @mixin mobile-navbar-collapse {
     .navbar-collapse {
