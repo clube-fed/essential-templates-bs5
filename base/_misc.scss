@@ -29,7 +29,7 @@
         display: block;
         position: fixed;
         width: 200px;
-        height: 200px;
+        height: 260px;
         padding: 0 0 15px 0;
         text-align: center;
         bottom: 0;
@@ -114,7 +114,7 @@
             position: absolute;
         }
     }
-    .fed-scripts,.content-scripts {
+    .fed-scripts,.content-scripts,.geo-scripts {
         padding-bottom: 15px;
     }
 }
