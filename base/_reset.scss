@@ -55,7 +55,7 @@ a {
     }
 }
 
-a:focus, button:focus, input:focus {
+a:focus-visible, button:focus-visible, input:focus-visible {
     outline-width: 2px;
     outline-style: solid;
     outline-color: Highlight;
