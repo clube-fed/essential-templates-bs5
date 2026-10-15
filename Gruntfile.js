@@ -54,7 +54,7 @@ module.exports = function (grunt) {
         },
         watch: {
             scripts: {
-            files: ['**/*.js'],
+            files: ['js/components/*.js'],
             tasks: ['concat'],
             }
         },
@@ -63,5 +63,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat')
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default.js', ['watch']);
+    grunt.registerTask('default', ['watch']);
 }
